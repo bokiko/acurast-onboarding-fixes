@@ -12,3 +12,17 @@ build/
 provisioning*.json
 pairing*.json
 *.log
+
+# RepoFix universal defaults
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+.env
+.env.local
+.env.*.local
+logs/
+*.pem
+*.key
+credentials.json
