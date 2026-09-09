@@ -14,3 +14,7 @@ Checked 2026-09-09. Upstream documents may change; field observations apply to t
 Field evidence: private setup records and explicit user confirmations, summarized without identifiers. The original 1.27.1 APK was inspected locally: its pairing parser expects a PersistableBundle, which informed the helper. Full APK decompilation and private logs are not published.
 
 Planning received Claude and Kimi critiques. Those were reviews of supplied observations, not device tests or independent verification. The repository maintainer is responsible for the published claims.
+
+Beginner walkthrough references checked 2026-09-09: [Google Platform Tools](https://developer.android.com/tools/releases/platform-tools), [Python Mac releases](https://www.python.org/downloads/macos/), [Temurin 17 binaries](https://github.com/adoptium/temurin17-binaries/releases), [Android QR setup](https://support.google.com/work/android/answer/9566881?hl=en), [developer options](https://developer.android.com/studio/debug/dev-options), [Xiaomi developer settings](https://www.mi.com/global/support/faq/details/KA-168765/). Direct Python and Java download links were checked against official hosts/releases.
+
+AI instructions use official installer documentation: [Claude Code](https://code.claude.com/docs/en/overview), [Kimi Code](https://moonshotai.github.io/kimi-code/), [Codex CLI](https://developers.openai.com/codex/cli/). A normal cloud chat is not claimed to have local USB access.

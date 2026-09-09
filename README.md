@@ -4,6 +4,18 @@ Practical setup notes for turning a dedicated Android phone into an **Acurast Pr
 
 **Community documentation, not an official Acurast product or compatibility certification.** The USB pairing helper is unofficial and version-sensitive. This guide is for phones you own and intend to dedicate to Core; Core lockdown can disable normal phone access and USB debugging.
 
+## Easier with a local AI assistant
+
+**[Set up with Claude, Kimi, or Codex →](docs/ai-assisted.md)**
+
+A local assistant can handle commands and troubleshooting while you handle phone prompts. Download the guide, open its folder in your assistant, and give it [AI-ONBOARDING.md](AI-ONBOARDING.md). The linked page includes installation commands and a ready-to-paste prompt. A cloud-only chat cannot automatically control a USB phone.
+
+## First time? Start here
+
+**[Open the complete beginner walkthrough →](docs/start-here.md)**
+
+No coding experience needed. It tells you which app to open on your computer, what to tap on your phone, what to copy, and what each result means. Mac, Windows, and Ubuntu instructions are included. You can follow the whole setup on one page; outside links are downloads, the Hub, or optional references.
+
 ## Choose your next step
 
 | What you see | Start here |

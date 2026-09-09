@@ -1,5 +1,7 @@
 # Official route first
 
+**New to this? Use the [complete beginner walkthrough](start-here.md), or [let a local AI assistant help](ai-assisted.md).** Essential steps are explained there; this page is the shorter reference.
+
 This page summarizes upstream guidance checked on 2026-09-09; it is not a claim that this project reproduced the current official flow end to end.
 
 1. Confirm the [current Acurast requirements](https://docs.acurast.com/processors/become-compute-provider/).

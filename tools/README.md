@@ -18,13 +18,15 @@ Checks JSON size, duplicate keys, expected admin component, five nonempty string
 
 ## Build the Android helper
 
-Requires **JDK 17** (`java` and `javac` on PATH), Python 3, Bash, and internet for the first build. Run from the repo root:
+First-time users: use [Start here](../docs/start-here.md) for download links, installer choices, and exactly where to paste commands.
+
+Requires **JDK 17** (`java` and `javac` available in the terminal), Python 3, and internet for the first build. Run from the repo root:
 
 ```sh
-bash tools/build.sh
+python3 tools/build.py
 ```
 
-The script downloads hash-pinned dependencies from Maven Central and Google's Android Maven repository into ignored `build/deps`, compiles source, and runs D8 to produce `build/helper.zip`. Downloads happen only if absent, and cached hashes are checked too. No phone is contacted. Dependency URLs and SHA-256 hashes are in the script.
+The script downloads hash-pinned dependencies from Maven Central and Google's Android Maven repository into ignored `build/deps`, compiles source, and runs D8 to produce `build/helper.zip`. Downloads happen only if absent, and cached hashes are checked too. No phone is contacted. Dependency URLs and SHA-256 hashes are in `tools/build.py`.
 
 The old Android Maven JAR is a compile-time stub only, not an Android runtime or claimed device requirement. APIs newer than those stubs are reached reflectively; `org.json` and Android classes are supplied by the phone at runtime. Only our class is dexed into the helper. No third-party JAR or APK is redistributed.
 

@@ -1,5 +1,7 @@
 # Community USB onboarding
 
+**New to this? Use the [complete beginner walkthrough](start-here.md), or [let a local AI assistant help](ai-assisted.md).** Essential steps are explained there; this page is the shorter reference.
+
 This is the fallback used in our field sessions, **not an Acurast-supported provisioning API**. The public helper adds validation to the original working mechanism and is not yet independently reproduced end to end. Use a dedicated phone; read [helper limits](helper-review.md) before setting device owner. The [official route](official-route.md) remains the starting recommendation.
 
 Commands below use Bash/zsh on macOS or Linux, Python 3, and Google ADB. Run from this repository unless a path says otherwise. Windows-native shell instructions are not tested. Execute one stage at a time and inspect the result; do not paste the entire page as a script.
