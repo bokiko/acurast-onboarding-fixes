@@ -129,6 +129,7 @@ acurast-core-onboarding-guide/
 ├── AGENTS.md                  # Repository guidance for agents
 ├── CLAUDE.md                  # Claude entry point
 ├── docs/
+│   ├── assets/                 # Static badges and related-project card
 │   ├── start-here.md           # Complete beginner walkthrough
 │   ├── ai-assisted.md          # Ready-to-paste AI prompt and instructions
 │   ├── official-route.md       # Official-route summary

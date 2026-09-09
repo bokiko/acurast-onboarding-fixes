@@ -4,7 +4,7 @@ Describe the reader problem and resulting change.
 
 ## Changes
 
-- 
+- Describe the change.
 
 ## Related Issue
 
