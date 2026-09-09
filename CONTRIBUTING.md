@@ -1,7 +1,7 @@
-# Contributing
+# Contribute through GitHub
 
-Submit a documentation correction or a field result with model identifier, Android/OS version, build (without serial), Core version, exact route, sanitized error, and observed outcome. Distinguish app installed, owner set, pairing launched, and confirmed online.
+You can report a result or suggest a correction using GitHub's website. No local download or clone is needed. Open Issues → New issue → Onboarding result or problem, or use a page's edit control to propose a change.
 
-Never include real QR images/data, pairing signatures, account addresses, Wi-Fi credentials, serials, APKs, or firmware backups. Review diagnostic output before posting. Unsupported ideas belong under “not yet tested,” not in the working procedure.
+Include model (no serial), Android/vendor OS version, Core version, route, exact sanitized error and last successful stage. Distinguish installed, owner set, pairing launched and confirmed online.
 
-For helper changes, run `python3 -m unittest discover -s tests`, build with `tools/build.sh`, and document whether a disposable device was actually used. Host tests cannot establish Android runtime or Hub success. No independent end-to-end reproduction of the public hardened helper is claimed yet.
+Never post QR data/images, pairing signatures, account identifiers, recovery words, Wi-Fi secrets, unreviewed logs or device backups. Describe untested ideas as untested. Keep instructions readable in the browser and do not reintroduce automatic downloads or installer commands.

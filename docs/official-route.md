@@ -12,6 +12,6 @@ This page summarizes upstream guidance checked on 2026-09-09; it is not a claim 
 
 Use the Hub's current instructions for the welcome-screen scanner gesture and setup prompts; they may differ by software. The Hub's QR can also serve Lite, but this guide follows **Core for dedicated phones**.
 
-If a download is blocked, record the exact message and use [Samsung](samsung.md), [Xiaomi](xiaomi.md), or [troubleshooting](troubleshooting.md). The advanced custom APK URL can change the download source; it does not by itself remove OS installation restrictions. Only use a verified official release URL from [downloads](downloads.md).
+If a download is blocked, record the exact message and use [Samsung](samsung.md), [Xiaomi](xiaomi.md), or [troubleshooting](troubleshooting.md). The advanced custom APK URL can change the download source; it does not by itself remove OS installation restrictions. The [version/provenance notes](downloads.md) explain the file used in our recorded sessions; they are not a computer download step.
 
 The [USB alternative](usb-onboarding.md) describes our separate community method after reaching Android Settings and enabling ADB. It is not an official substitute for every factory-reset or management requirement.

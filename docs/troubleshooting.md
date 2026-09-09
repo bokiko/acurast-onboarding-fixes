@@ -1,5 +1,7 @@
 # Troubleshooting by observed error
 
+Read these fixes directly in GitHub. USB/tool errors apply only if you or an authorized local assistant already have those tools. No computer installation is required to read this guide. For the phone-only QR route, use [Start here](start-here.md).
+
 Always select the intended device explicitly. Stop after a failed prerequisite instead of running the remaining commands.
 
 | Observation | Meaning / next check | Tested action or next step |

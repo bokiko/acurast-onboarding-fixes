@@ -1,3 +1,3 @@
 # Claude entry point
 
-Read [AGENTS.md](AGENTS.md). When the user requests phone onboarding, read [AI-ONBOARDING.md](AI-ONBOARDING.md). A repository-edit task does not authorize operations on attached phones.
+Read [AGENTS.md](AGENTS.md). For a user-requested phone setup, read [AI-ONBOARDING.md](AI-ONBOARDING.md). When given a GitHub URL, read pages directly; do not clone or download the repository. Repository editing does not authorize phone operations.

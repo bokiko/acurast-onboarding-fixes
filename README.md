@@ -1,64 +1,53 @@
 # Acurast Core onboarding guide
 
-Practical setup notes for turning a dedicated Android phone into an **Acurast Processor Core**. Built from real Samsung, Xiaomi, and Pixel onboarding sessions, including the errors that took the longest to resolve.
+A practical guide to setting up a dedicated Samsung, Xiaomi, or Pixel phone on Acurast Core—with the fixes we learned while onboarding real phones.
 
-**Community documentation, not an official Acurast product or compatibility certification.** The USB pairing helper is unofficial and version-sensitive. This guide is for phones you own and intend to dedicate to Core; Core lockdown can disable normal phone access and USB debugging.
+**Read everything here on GitHub. You do not need to download, clone, or install this repository. Opening these pages does not install software, run commands, or access your phone.**
 
-## Easier with a local AI assistant
+This is a community guide, not an Acurast app or an automatic installer. Installing Acurast itself is a separate action on your phone, through the official onboarding flow. An AI assistant also needs your permission and suitable local tools before it can change anything.
 
-**[Set up with Claude, Kimi, or Codex →](docs/ai-assisted.md)**
+## Choose how you want help
 
-A local assistant can handle commands and troubleshooting while you handle phone prompts. Download the guide, open its folder in your assistant, and give it [AI-ONBOARDING.md](AI-ONBOARDING.md). The linked page includes installation commands and a ready-to-paste prompt. A cloud-only chat cannot automatically control a USB phone.
-
-## First time? Start here
-
-**[Open the complete beginner walkthrough →](docs/start-here.md)**
-
-No coding experience needed. It tells you which app to open on your computer, what to tap on your phone, what to copy, and what each result means. Mac, Windows, and Ubuntu instructions are included. You can follow the whole setup on one page; outside links are downloads, the Hub, or optional references.
-
-## Choose your next step
-
-| What you see | Start here |
+| Your preference | Open this page |
 | --- | --- |
-| New to Core or phone at the welcome screen | [Official onboarding route](docs/official-route.md) |
-| APK or USB commands blocked on Samsung | [Samsung notes](docs/samsung.md) |
-| Xiaomi asks for a SIM/account or rejects USB commands | [Xiaomi notes](docs/xiaomi.md) |
-| Using a Pixel | [Pixel notes](docs/pixel.md) |
-| Official onboarding failed and you have working ADB | [Community USB procedure](docs/usb-onboarding.md) |
-| An exact error or no online status | [Troubleshooting](docs/troubleshooting.md) |
-| Rooted, modified, or stuck after provisioning | [Recovery boundaries](docs/recovery.md) |
+| Let Claude, Kimi, or Codex help with the technical work | **[AI-assisted setup](docs/ai-assisted.md)** — copy a prompt with the repo URL |
+| Follow the phone steps yourself | **[Start here](docs/start-here.md)** — a complete browser-readable walkthrough |
+| Samsung is blocking setup | [Samsung steps](docs/samsung.md) |
+| Xiaomi asks for a SIM/account or blocks USB | [Xiaomi steps](docs/xiaomi.md) |
+| You have a Pixel | [Pixel steps](docs/pixel.md) |
+| Something failed | [Find your error](docs/troubleshooting.md) |
 
-**Installing an APK, becoming device owner, and pairing to the Hub are separate steps.** A successful install or a disappearing USB connection does not prove the processor is online.
+## Give this link to your AI assistant
 
-## Before you start
-
-Acurast currently lists Android 12+, a non-rooted device, and a locked bootloader. Its official Core route starts with a factory reset. See the [upstream requirements](https://docs.acurast.com/processors/become-compute-provider/). Back up anything needed before dedicating the phone. Have reliable power, internet, a data-capable USB cable for the fallback, and access to your own [Acurast Hub](https://hub.acurast.com/).
-
-For a first diagnosis, install Google's [Platform Tools](https://developer.android.com/tools/releases/platform-tools), connect and authorize the phone, then run:
-
-```sh
-adb devices -l
-python3 tools/diagnose.py --serial YOUR_DEVICE_SERIAL
+```text
+Read https://github.com/bokiko/acurast-core-onboarding-guide/blob/main/AI-ONBOARDING.md
+and the guide pages it references directly from GitHub. Help me onboard my dedicated
+phone to Acurast Core. Do not download or clone this repository, install computer tools,
+or run installer scripts. Start by checking what access and tools you already have.
+Explain each step simply and tell me exactly what I need to tap on the phone.
+Ask before changing the phone, and never reset, flash, or unlock it without my explicit approval.
 ```
 
-The diagnostic reads selected state only. It does not install, remove accounts, change settings, pair, or reset. Unknown readings are shown as unknown, not as a pass.
+A local assistant can make the computer work much easier. An ordinary browser chat can explain steps, but cannot automatically control your USB phone. [How to use the prompt](docs/ai-assisted.md).
 
-## Field results
+## What success means
 
-Recorded 2026-09-09 using Core **1.27.1 (136)** and the community USB method. These are single-session observations, not promises for other firmware or future versions.
+**App installed → Core registered as device owner → paired to your Hub → confirmed online.** These are different stages. A successful installation or a lost USB connection alone does not prove online status.
 
-| Device | Android | Preserved result | Notes |
-| --- | --- | --- | --- |
-| Samsung SM-A055F | 14 | User confirmed online | Core USB setup |
-| Google Pixel 6 Pro | 14 | User confirmed online | Core USB setup |
-| Samsung SM-A045F | 14 | User confirmed online | Separate stock restoration and relock first; Knox bit remained tripped |
-| Samsung SM-S918B | 15 | Device owner and pairing launch confirmed | Independent online confirmation not preserved |
-| Xiaomi 23124RA7EO | 13 / MIUI 14 | User confirmed online | SIM/account enabled extra USB permission; accounts removed before owner setup |
+Core is for a phone you intend to dedicate to Acurast. Its official route starts with a factory reset and later locks down normal phone access. Back up needed data first. Current published requirements include Android 12+, no root, and a locked bootloader. [Official reference](https://docs.acurast.com/processors/become-compute-provider/).
 
-The hardened public helper is build-tested, but has **not yet been rerun end to end on a spare phone**. The original helper's mechanism worked in these sessions. See [review and limits](docs/helper-review.md) and [verified downloads](docs/downloads.md).
+## Our field results
 
-## What is included
+Recorded 2026-09-09, using Core **1.27.1 (136)** and a community USB method. These are individual observations, not a compatibility guarantee.
 
-Manual instructions, error-specific remedies, a redacted read-only diagnostic, and source/build instructions for the community pairing helper. No APKs, real QR codes, pairing payloads, private account data, firmware, or device backups are distributed.
+| Device | Android | Recorded result |
+| --- | --- | --- |
+| Samsung SM-A055F | 14 | Owner confirmed online |
+| Google Pixel 6 Pro | 14 | Owner confirmed online |
+| Samsung SM-A045F | 14 | Owner confirmed online after separate stock restoration/relock; Knox bit stayed tripped |
+| Samsung SM-S918B | 15 | Device owner and pairing launch confirmed; online confirmation not preserved |
+| Xiaomi 23124RA7EO | 13 / MIUI 14 | Owner confirmed online after extra USB permissions and setup-account removal |
 
-[Contribute a result](CONTRIBUTING.md) · [Sources and verification](docs/sources.md) · [Helper build](tools/README.md)
+The normal self-service walkthrough uses the phone's setup QR scanner. Our [USB technical notes](docs/usb-onboarding.md) describe an unofficial alternative that needs existing local tools and a reviewed pairing implementation; this guide does not silently fetch or run one.
+
+[Version/provenance notes](docs/downloads.md) · [Technical helper review](docs/helper-review.md) · [Recovery boundaries](docs/recovery.md) · [Sources](docs/sources.md) · [Contribute](CONTRIBUTING.md)

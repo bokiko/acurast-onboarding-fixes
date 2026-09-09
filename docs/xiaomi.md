@@ -1,33 +1,24 @@
-# Xiaomi: the extra USB permission matters
+# Xiaomi: the extra USB permission
 
-Observed on **23124RA7EO, Android 13, MIUI 14**, on 2026-09-09. Other Xiaomi/Redmi/POCO versions may behave differently.
+Observed on **23124RA7EO, Android 13 / MIUI 14**. Read here in GitHub; no repo download is needed. The ordinary self-service path is [welcome-screen QR onboarding](start-here.md). The following findings concern the community USB alternative with existing local tools.
 
-## The sequence that worked
+## Exact phone steps that resolved our USB restriction
 
-1. Ordinary USB debugging let us read device state, but remote taps and device-owner registration were rejected.
-2. **Install via USB** and **USB debugging (Security settings)** required Xiaomi sign-in and a SIM on this phone.
-3. The owner inserted a SIM and enabled the extra switches through Developer options. The previously denied device-owner command then reached Android's account checks.
-4. Google and Xiaomi accounts were present. We removed Google from the phone and signed out of Xiaomi using Settings; Android then reported zero accounts.
-5. Device-owner registration succeeded. The helper delivered the Hub pairing extras, Core disconnected ADB, and the owner confirmed it online.
+1. Settings → About phone → Detailed info and specs / All specs → tap **OS/MIUI version seven times**.
+2. Settings → Additional settings → Developer options → enable **USB debugging**.
+3. Also enable **Install via USB** and **USB debugging (Security settings)**.
+4. Xiaomi required account sign-in and a SIM on our phone. The owner handled those physically; the extra permission then worked. Do not use Mi Unlock or OEM unlocking.
+5. Android subsequently rejected device-owner setup because setup accounts remained. Remove Google through Settings → Accounts & sync → Google → account → More → Remove account, and Xiaomi through Settings → Xiaomi Account → Sign out.
+6. Verify zero accounts and retained USB access before continuing an authorized owner/pairing operation.
 
-Do not confuse ordinary **USB debugging** with **USB debugging (Security settings)**. Do not enable OEM unlocking or Mi Unlock for this procedure.
+Account removal affects locally synced data, not the cloud account. Preserve unsynced data first, and enter any sign-out password on the phone. Ordinary USB debugging alone allowed reads but blocked input and owner commands in our case.
 
-If sign-in is needed, enter credentials on the phone, not in a terminal or issue report. Before owner registration, remove setup accounts from this device through the normal Settings UI. This removes locally synchronized account data, not the cloud account itself. Back up unsynced data first. Xiaomi may ask for a password to sign out. Check that the extra USB permission still works afterward.
+## What we can honestly promise
 
-The SIM was inserted for setup; we did **not** record removing it afterward. We have no verified SIM-free workaround for this specific restriction. A borrowed or temporarily moved SIM may be practical, but do not assume a particular inactive SIM will satisfy the prompt.
+The owner confirmed this phone online after extra permissions, account removal, ownership and pairing. We did not verify a SIM-free alternative or test SIM removal afterward. Suggested MIUI optimization changes did not produce a working alternative in our session.
 
-## Manual APK install only solves installation
+A manual APK installation solved installation only; it did not fix management permission. If your assistant lacks existing suitable computer tools or a reviewed pairing implementation, it should explain that limitation rather than download files silently. [AI instructions](ai-assisted.md).
 
-When `adb install` returned `INSTALL_FAILED_USER_RESTRICTED`, copying the verified APK to Downloads and installing through File Manager succeeded:
+For Google's scanning settings, open Play Store → profile → Play Protect → gear. Our preparation turned off Improve harmful app detection, then Scan apps with Play Protect, choosing Turn off rather than Pause when offered. Do not remove the Play Store itself.
 
-```sh
-adb -s "$ACURAST_SERIAL" push processor-1.27.1.apk /sdcard/Download/Acurast-Core-1.27.1.apk
-```
-
-On the phone open that file, allow installation from File Manager if requested, and install. This did **not** resolve the separate device-owner restriction. Do not stop at “app installed.”
-
-## What did not work in our session
-
-Suggesting MIUI optimization changes did not produce a successful alternative. Remote property modification was denied. We do not publish this as a tested bypass. More generally, [AirDroid's Xiaomi instructions](https://help.airdroid.com/hc/en-us/articles/360045329413-How-to-Enable-USB-debugging-on-Xiaomi) also distinguish the additional USB security switch.
-
-Check [Play Protect](samsung.md#play-protect) too; those are Google controls, not Samsung-only controls. Continue with the [shared USB procedure](usb-onboarding.md) once accounts and permissions are ready.
+Optional reference: [Xiaomi USB security setup described by AirDroid](https://help.airdroid.com/hc/en-us/articles/360045329413-How-to-Enable-USB-debugging-on-Xiaomi).
