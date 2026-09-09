@@ -2,7 +2,13 @@
 
 Read this page in GitHub; no guide files or computer software need to be downloaded. Start with the [full phone QR walkthrough](start-here.md).
 
-## If Samsung blocks the app or USB
+## If setup is blocked at the welcome screen
+
+If QR setup stops before you can reach ordinary Settings, write down the exact warning and the last step that worked. Open [AI-assisted help](ai-assisted.md) and include your phone model, Android version if known, and that Settings is unavailable. Keep the QR and account details private.
+
+The switches below require access to Settings; they are not steps you can follow from the welcome screen. Your assistant should identify the blocker and check whether a supported next step is available with existing tools. If it cannot establish one, stop there rather than reset repeatedly or try an unexplained command.
+
+## If Settings is accessible and Samsung blocks the app or USB
 
 If ordinary Settings is accessible, open **Settings → Security and privacy → Auto Blocker**. Inspect the master switch and any Maximum restrictions. If it blocks the intended verified Acurast setup, turn the master control off after reading its confirmation. Some older models lack this feature.
 

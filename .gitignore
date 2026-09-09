@@ -13,7 +13,7 @@ provisioning*.json
 pairing*.json
 *.log
 
-# RepoFix universal defaults
+# Editor files and local configuration
 Thumbs.db
 .idea/
 .vscode/

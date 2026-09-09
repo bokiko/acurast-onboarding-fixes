@@ -41,7 +41,7 @@ This is a community guide, not an Acurast app or an automatic installer. Install
 | You have a Pixel | [Pixel steps](docs/pixel.md) |
 | Something failed | [Find your error](docs/troubleshooting.md) |
 
-## Give this link to your AI assistant
+## Get help from your AI assistant
 
 Open **[AI-assisted setup](docs/ai-assisted.md#2-paste-this-into-its-chat-box)** and copy the message into your assistant. It includes the direct link to [AI-ONBOARDING.md](https://github.com/bokiko/acurast-onboarding-fixes/blob/main/AI-ONBOARDING.md), explains what help you want, and keeps phone changes under your control.
 

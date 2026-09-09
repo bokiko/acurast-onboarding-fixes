@@ -15,6 +15,6 @@ Field evidence: private setup records and explicit user confirmations, summarize
 
 Planning received Claude and Kimi critiques. Those were reviews of supplied observations, not device tests or independent verification. The repository maintainer is responsible for the published claims.
 
-Browser walkthrough references: [Android QR setup](https://support.google.com/work/android/answer/9566881?hl=en), [developer options](https://developer.android.com/studio/debug/dev-options), and [Xiaomi developer settings](https://www.mi.com/global/support/faq/details/KA-168765/). These support instructions included directly in this guide; reading external tutorials is not required.
+Browser walkthrough references: [Android QR setup](https://support.google.com/work/android/answer/9566881?hl=en), [developer options](https://developer.android.com/studio/debug/dev-options), and [Xiaomi developer settings](https://www.mi.com/global/support/faq/details/KA-168765/). These references support the steps explained in this guide; reading external tutorials is not required.
 
 The earlier computer-tool installers and local build workflow have been removed from the current guide. The original technical validation remains historical evidence, not a requirement for readers to obtain software.
