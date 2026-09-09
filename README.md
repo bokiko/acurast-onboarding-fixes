@@ -18,7 +18,8 @@
 <p align="center">
   <a href="docs/start-here.md"><strong>Start here</strong></a> ·
   <a href="docs/ai-assisted.md"><strong>Use an AI assistant</strong></a> ·
-  <a href="docs/troubleshooting.md"><strong>Find your error</strong></a>
+  <a href="docs/troubleshooting.md"><strong>Find your error</strong></a> ·
+  <a href="#security-and-privacy"><strong>Security and privacy</strong></a>
 </p>
 
 ---
@@ -51,6 +52,19 @@ A local assistant can make the computer work much easier. An ordinary browser ch
 **App installed → Core registered as device owner → paired to your Hub → confirmed online.** These are different stages. A successful installation or a lost USB connection alone does not prove online status.
 
 Core is for a phone you intend to dedicate to Acurast. Its official route starts with a factory reset and later locks down normal phone access. Back up needed data first. Current published requirements include Android 12+, no root, and a locked bootloader. [Official reference](https://docs.acurast.com/processors/become-compute-provider/).
+
+## Security and privacy
+
+**Reading this guide installs nothing and gives nobody access to your phone.** Installing Acurast or letting an assistant change your phone is a separate action you control. This community guide is not a security certification or a guarantee that every method works on every phone.
+
+- **Keep your secrets private.** Never put passwords, wallet recovery words, private keys, Wi-Fi passwords, or onboarding QR codes in an AI chat or public GitHub issue. Enter credentials only on your phone or in your official wallet. Do not use a public website to decode your QR.
+- **Check where the app comes from.** Use your own [Acurast Hub](https://hub.acurast.com/) session and the official Acurast sources linked in our [app verification notes](docs/downloads.md). Avoid APKs or “fix tools” sent by strangers. Reading this repo requires no download.
+- **Protect your data before setup.** Use a phone you own and intend to dedicate to Core. Back up anything you need before a reset. Read the [recovery boundaries](docs/recovery.md) before considering firmware or bootloader changes.
+- **Stay in control of AI help.** Confirm the correct phone and understand the proposed changes before authorizing them. An assistant should explain commands and missing tools, keep pairing data private, and stop when the next step is unclear. Reading the guide is not permission to reset or modify a phone.
+- **Understand security-setting changes.** Turning off app scanning or installation blockers reduces protection. Our recorded settings are not proven necessary for every phone; re-enabling them afterward was not tested. Follow the relevant phone page and the actual warning, rather than disabling everything.
+- **Share only what is needed for help.** A model, Android version, last successful step, and an error with private details removed are usually enough. Before posting screenshots or logs, hide email addresses, wallet/account details, device serials, QR codes, and passwords. Public posts can be copied even if you delete them later.
+
+If a step or message looks suspicious, stop and check the [troubleshooting guide](docs/troubleshooting.md). You can [report a concern on GitHub](https://github.com/bokiko/acurast-onboarding-fixes/issues/new/choose), but describe the problem without posting secrets or a working onboarding QR.
 
 ## Our field results
 
