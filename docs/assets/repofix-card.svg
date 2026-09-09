@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="450" height="132" viewBox="0 0 450 132" role="img" aria-label="RepoFix: repository style guide and standards">
-<title>bokiko / RepoFix</title>
-<style>.panel{fill:#f6f8fa;stroke:#d0d7de}.title{fill:#8250df}.copy{fill:#57606a}@media(prefers-color-scheme:dark){.panel{fill:#161b22;stroke:#30363d}.title{fill:#c690f1}.copy{fill:#b1bac4}}</style>
-<rect class="panel" x="1" y="1" width="448" height="130" rx="10"/>
-<g font-family="system-ui,-apple-system,Segoe UI,sans-serif"><text class="title" x="24" y="38" font-size="18" font-weight="600">bokiko / RepoFix</text><text class="copy" x="24" y="68" font-size="13">Repository style guide and standards</text><text class="copy" x="24" y="88" font-size="13">for a consistent GitHub presence.</text><circle cx="29" cy="110" r="5" fill="#A931EC"/><text class="copy" x="42" y="114" font-size="12">Documentation</text></g></svg>

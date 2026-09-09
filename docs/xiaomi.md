@@ -15,10 +15,12 @@ Account removal affects locally synced data, not the cloud account. Preserve uns
 
 ## What we can honestly promise
 
-The owner confirmed this phone online after extra permissions, account removal, ownership and pairing. We did not verify a SIM-free alternative or test SIM removal afterward. Suggested MIUI optimization changes did not produce a working alternative in our session.
+The owner confirmed this phone online after extra permissions, account removal, ownership and pairing. We did not verify a SIM-free alternative, a MIUI-optimization-based alternative, or SIM removal afterward.
 
 A manual APK installation solved installation only; it did not fix management permission. If your assistant lacks existing suitable computer tools or a reviewed pairing implementation, it should explain that limitation rather than download files silently. [AI instructions](ai-assisted.md).
 
 For Google's scanning settings, open Play Store → profile → Play Protect → gear. Our preparation turned off Improve harmful app detection, then Scan apps with Play Protect, choosing Turn off rather than Pause when offered. Do not remove the Play Store itself.
+
+This describes the preparation used, not a setting change proven necessary on Xiaomi. It reduces scanning; behavior after re-enabling it was not tested.
 
 Optional reference: [Xiaomi USB security setup described by AirDroid](https://help.airdroid.com/hc/en-us/articles/360045329413-How-to-Enable-USB-debugging-on-Xiaomi).

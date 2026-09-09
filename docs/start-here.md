@@ -38,6 +38,8 @@ Read the final on-phone warning. You may need your PIN and previous account cred
 
 ## 4. Scan during setup
 
+This route follows Acurast and Android documentation. Our recorded successful sessions used the separate community USB alternative; we have not independently reproduced this QR flow end to end.
+
 1. At the **initial welcome screen**, tap the **same blank spot six times**.
 2. Android should open its setup QR scanner, or first ask you to connect to Wi-Fi. Follow that prompt.
 3. Point the phone at the QR on the computer. Do not use the ordinary Camera app from an already-configured home screen.
@@ -56,7 +58,7 @@ An installed app is not enough. **Finished means your intended processor is onli
 
 ## 6. If Samsung blocks installation
 
-Write down the exact warning first. If you can reach the ordinary Android home screen/Settings, inspect:
+Write down the exact warning first. The settings below require access to the ordinary Android home screen/Settings. If you are blocked at the welcome screen, use [Samsung troubleshooting](samsung.md) to identify the restriction before trying another reset. Once Settings is accessible, inspect:
 
 1. **Settings → Security and privacy → Auto Blocker.** If it is blocking the verified Acurast setup, you can switch it off after reading its confirmation. Older models may not have this option.
 2. **Play Store → profile circle → Play Protect → settings gear.** Our setup used **Improve harmful app detection off**, followed by **Scan apps with Play Protect off**. If asked Pause or Turn off, the recorded choice was **Turn off**.
@@ -84,7 +86,7 @@ A manually installed APK solved only installation in our Xiaomi case. It did not
 
 ## 8. Optional checks with tools already on your computer
 
-If you do not already have Google's ADB tool, skip these commands and use the normal QR route or ask your assistant to explain the limitation. **This guide does not ask you to install computer tools.**
+Skip this section unless you already know Google's ADB tool is installed on your computer. Otherwise, use the normal QR route or ask your assistant to explain the limitation. **This guide does not ask you to install computer tools.**
 
 Where commands go:
 

@@ -9,7 +9,7 @@ Checked 2026-09-09. Upstream documents may change; field observations apply to t
 | [Acurast 1.27.1 release](https://github.com/Acurast/acurast-processor-update/releases/tag/processor-1.27.1) | Exact official download and asset SHA-256 |
 | [Android dedicated-device development setup](https://developer.android.com/work/dpc/dedicated-devices/cookbook#development-setup) | ADB device-owner setup for eligible development devices; not endorsement of our Core helper |
 | [Samsung Auto Blocker](https://www.samsung.com/us/support/answer/ANS10003636/) | Outside-store installation and USB command restrictions |
-| [AirDroid Xiaomi USB setup](https://help.airdroid.com/hc/en-us/articles/360045329413-How-to-Enable-USB-debugging-on-Xiaomi) | Extra Xiaomi USB security setting and sign-in |
+| [AirDroid Xiaomi USB setup](https://help.airdroid.com/hc/en-us/articles/360045329413-How-to-Enable-USB-debugging-on-Xiaomi) | Third-party description of the extra Xiaomi USB security setting and sign-in |
 
 Field evidence: private setup records and explicit user confirmations, summarized without identifiers. The original 1.27.1 APK was inspected locally: its pairing parser expects a PersistableBundle, which informed the helper. Full APK decompilation and private logs are not published.
 

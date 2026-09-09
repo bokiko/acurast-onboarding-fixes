@@ -12,6 +12,8 @@
 6. Register Core as device owner, then deliver the unchanged signed pairing data.
 7. Complete the phone's prompts and verify the intended processor online in Hub.
 
+The helper used in those sessions differs from the [source retained here](../tools/CoreProvision.java), which adds guard checks that have not been tested through a complete phone onboarding. See the [helper review](helper-review.md) before treating that source as a working pairing implementation.
+
 ## Why there is no one-line pairing command here
 
 Our original helper placed five Hub strings—account, accountType, timestamp, signature and type—inside an Android **PersistableBundle** under `android.app.extra.PROVISIONING_ADMIN_EXTRAS_BUNDLE`. It launched Core's `MainActivity` with `android.app.action.PROVISIONING_SUCCESSFUL` using Android shell.

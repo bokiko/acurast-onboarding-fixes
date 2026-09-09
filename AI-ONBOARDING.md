@@ -9,6 +9,7 @@ This is a browser-readable community Acurast Core guide. **Read it and its linke
 - [Xiaomi](https://github.com/bokiko/acurast-onboarding-fixes/blob/main/docs/xiaomi.md)
 - [Pixel](https://github.com/bokiko/acurast-onboarding-fixes/blob/main/docs/pixel.md)
 - [Troubleshooting](https://github.com/bokiko/acurast-onboarding-fixes/blob/main/docs/troubleshooting.md)
+- [Recovery boundaries](https://github.com/bokiko/acurast-onboarding-fixes/blob/main/docs/recovery.md)
 - [USB method and prerequisites](https://github.com/bokiko/acurast-onboarding-fixes/blob/main/docs/usb-onboarding.md)
 - [App provenance](https://github.com/bokiko/acurast-onboarding-fixes/blob/main/docs/downloads.md)
 - [Helper limitations](https://github.com/bokiko/acurast-onboarding-fixes/blob/main/docs/helper-review.md)

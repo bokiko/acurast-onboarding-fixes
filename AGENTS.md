@@ -7,4 +7,4 @@
 - Do not claim the app can run without being installed on the phone. Reading this guide has no installation side effects; actual setup is separate.
 - For documentation changes check local links, anchors and whitespace. Do not download dependencies or run a phone helper for a docs task.
 
-- Keep the RepoFix-inspired wave header/footer and unified-color badges, but preserve the simpler browser-first README wording requested by the owner. Do not reintroduce Roadmap, Related Projects, or a template-driven section expansion. Never add clone/install commands to match an app template.
+- Keep the wave header/footer and unified-color badges, and preserve the simple browser-first README wording. Do not reintroduce Roadmap, Related Projects, or a template-driven section expansion. Never add clone/install commands to match an app template.

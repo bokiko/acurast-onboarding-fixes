@@ -2,7 +2,7 @@
   <img src="https://capsule-render.vercel.app/api?type=waving&amp;color=gradient&amp;height=200&amp;section=header&amp;text=Acurast%20Onboarding%20Fixes&amp;fontSize=42&amp;fontColor=ffffff&amp;animation=fadeIn&amp;fontAlignY=38&amp;desc=QR%20setup%20errors.%20Blocked%20installs.%20Clear%20fixes.&amp;descAlignY=58&amp;descAlign=50" alt="Acurast Onboarding Fixes — QR setup errors. Blocked installs. Clear fixes." width="100%" />
 </p>
 
-<!-- Static for-the-badge / flat-square equivalents keep RepoFix badge styling available without third-party badge service uptime. -->
+<!-- Badge images are stored in this repository; the decorative waves use an external service. -->
 <p align="center">
   <a href="https://github.com/bokiko/acurast-onboarding-fixes/blob/main/docs/start-here.md"><img src="https://github.com/bokiko/acurast-onboarding-fixes/raw/refs/heads/main/docs/assets/guide.png" width="158" height="28" alt="Read the live guide" /></a>
   <a href="https://x.com/bokiko"><img src="https://github.com/bokiko/acurast-onboarding-fixes/raw/refs/heads/main/docs/assets/x.png" width="93" height="28" alt="Follow @bokiko on X" /></a>
@@ -42,14 +42,7 @@ This is a community guide, not an Acurast app or an automatic installer. Install
 
 ## Give this link to your AI assistant
 
-```text
-Read https://github.com/bokiko/acurast-onboarding-fixes/blob/main/AI-ONBOARDING.md
-and the guide pages it references directly from GitHub. Help me onboard my dedicated
-phone to Acurast Core. Do not download or clone this repository, install computer tools,
-or run installer scripts. Start by checking what access and tools you already have.
-Explain each step simply and tell me exactly what I need to tap on the phone.
-Ask before changing the phone, and never reset, flash, or unlock it without my explicit approval.
-```
+Open **[AI-assisted setup](docs/ai-assisted.md#2-paste-this-into-its-chat-box)** and copy the message into your assistant. It includes the direct link to [AI-ONBOARDING.md](https://github.com/bokiko/acurast-onboarding-fixes/blob/main/AI-ONBOARDING.md), explains what help you want, and keeps phone changes under your control.
 
 A local assistant can make the computer work much easier. An ordinary browser chat can explain steps, but cannot automatically control your USB phone. [How to use the prompt](docs/ai-assisted.md).
 
@@ -61,7 +54,7 @@ Core is for a phone you intend to dedicate to Acurast. Its official route starts
 
 ## Our field results
 
-Recorded 2026-09-09, using Core **1.27.1 (136)** and a community USB method. These are individual observations, not a compatibility guarantee.
+Field notes recorded 2026-09-09, using Core **1.27.1 (136)** and a community USB method. Device versions and outcomes below come from those sessions; they are individual observations, not a compatibility guarantee. The official QR walkthrough follows upstream documentation; our recorded successes used the USB alternative.
 
 | Device | Android | Recorded result |
 | --- | --- | --- |
