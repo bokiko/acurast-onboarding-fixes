@@ -1,18 +1,18 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&amp;color=gradient&amp;height=200&amp;section=header&amp;text=Acurast%20Core&amp;fontSize=60&amp;fontColor=ffffff&amp;animation=fadeIn&amp;fontAlignY=38&amp;desc=Your%20dedicated%20phone.%20One%20clear%20guide.&amp;descAlignY=58&amp;descAlign=50" alt="Acurast Core — Your dedicated phone. One clear guide." width="100%" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&amp;color=gradient&amp;height=200&amp;section=header&amp;text=Acurast%20Onboarding%20Fixes&amp;fontSize=42&amp;fontColor=ffffff&amp;animation=fadeIn&amp;fontAlignY=38&amp;desc=QR%20setup%20errors.%20Blocked%20installs.%20Clear%20fixes.&amp;descAlignY=58&amp;descAlign=50" alt="Acurast Onboarding Fixes — QR setup errors. Blocked installs. Clear fixes." width="100%" />
 </p>
 
 <!-- Static for-the-badge / flat-square equivalents keep RepoFix badge styling available without third-party badge service uptime. -->
 <p align="center">
-  <a href="https://github.com/bokiko/acurast-core-onboarding-guide/blob/main/docs/start-here.md"><img src="https://github.com/bokiko/acurast-core-onboarding-guide/raw/refs/heads/main/docs/assets/guide.png" width="158" height="28" alt="Read the live guide" /></a>
-  <a href="https://x.com/bokiko"><img src="https://github.com/bokiko/acurast-core-onboarding-guide/raw/refs/heads/main/docs/assets/x.png" width="93" height="28" alt="Follow @bokiko on X" /></a>
+  <a href="https://github.com/bokiko/acurast-onboarding-fixes/blob/main/docs/start-here.md"><img src="https://github.com/bokiko/acurast-onboarding-fixes/raw/refs/heads/main/docs/assets/guide.png" width="158" height="28" alt="Read the live guide" /></a>
+  <a href="https://x.com/bokiko"><img src="https://github.com/bokiko/acurast-onboarding-fixes/raw/refs/heads/main/docs/assets/x.png" width="93" height="28" alt="Follow @bokiko on X" /></a>
 </p>
 
 <p align="center">
-  <a href="docs/start-here.md"><img src="https://github.com/bokiko/acurast-core-onboarding-guide/raw/refs/heads/main/docs/assets/android.png" width="106" height="20" alt="Android 12 or newer" /></a>
-  <a href="https://github.com/bokiko/acurast-core-onboarding-guide/blob/main/README.md"><img src="https://github.com/bokiko/acurast-core-onboarding-guide/raw/refs/heads/main/docs/assets/markdown.png" width="133" height="20" alt="Markdown guide" /></a>
-  <a href="docs/start-here.md"><img src="https://github.com/bokiko/acurast-core-onboarding-guide/raw/refs/heads/main/docs/assets/browser.png" width="179" height="20" alt="Read in your browser" /></a>
-  <a href="LICENSE"><img src="https://github.com/bokiko/acurast-core-onboarding-guide/raw/refs/heads/main/docs/assets/license.png" width="106" height="20" alt="MIT license" /></a>
+  <a href="docs/start-here.md"><img src="https://github.com/bokiko/acurast-onboarding-fixes/raw/refs/heads/main/docs/assets/android.png" width="106" height="20" alt="Android 12 or newer" /></a>
+  <a href="https://github.com/bokiko/acurast-onboarding-fixes/blob/main/README.md"><img src="https://github.com/bokiko/acurast-onboarding-fixes/raw/refs/heads/main/docs/assets/markdown.png" width="133" height="20" alt="Markdown guide" /></a>
+  <a href="docs/start-here.md"><img src="https://github.com/bokiko/acurast-onboarding-fixes/raw/refs/heads/main/docs/assets/browser.png" width="179" height="20" alt="Read in your browser" /></a>
+  <a href="LICENSE"><img src="https://github.com/bokiko/acurast-onboarding-fixes/raw/refs/heads/main/docs/assets/license.png" width="106" height="20" alt="MIT license" /></a>
 </p>
 
 <p align="center">
@@ -23,7 +23,7 @@
 
 ---
 
-A practical guide to setting up a dedicated Samsung, Xiaomi, or Pixel phone on Acurast Core—with the fixes we learned while onboarding real phones.
+A practical guide to fixing Acurast QR onboarding errors and blocked installations on Samsung, Xiaomi, and Pixel phones—with the steps we learned while onboarding real devices.
 
 **Read everything here on GitHub. You do not need to download, clone, or install this repository. Opening these pages does not install software, run commands, or access your phone.**
 
@@ -43,7 +43,7 @@ This is a community guide, not an Acurast app or an automatic installer. Install
 ## Give this link to your AI assistant
 
 ```text
-Read https://github.com/bokiko/acurast-core-onboarding-guide/blob/main/AI-ONBOARDING.md
+Read https://github.com/bokiko/acurast-onboarding-fixes/blob/main/AI-ONBOARDING.md
 and the guide pages it references directly from GitHub. Help me onboard my dedicated
 phone to Acurast Core. Do not download or clone this repository, install computer tools,
 or run installer scripts. Start by checking what access and tools you already have.

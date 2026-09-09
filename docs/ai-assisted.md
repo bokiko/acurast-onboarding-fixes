@@ -16,7 +16,7 @@ This is an ordinary message to the AI, **not a command for Terminal or PowerShel
 
 ```text
 Read this instruction file directly from GitHub:
-https://github.com/bokiko/acurast-core-onboarding-guide/blob/main/AI-ONBOARDING.md
+https://github.com/bokiko/acurast-onboarding-fixes/blob/main/AI-ONBOARDING.md
 Then read the guide pages it references, also directly from GitHub.
 
 Help me set up my own dedicated Android phone for Acurast Core, not Lite.
