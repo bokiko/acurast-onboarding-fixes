@@ -1,0 +1,14 @@
+*.apk
+*.dex
+*.class
+*.zip
+*.tar*
+*.img
+*.bin
+.DS_Store
+__pycache__/
+build/
+.private/
+provisioning*.json
+pairing*.json
+*.log
