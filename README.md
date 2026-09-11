@@ -30,10 +30,19 @@ A practical guide to fixing Acurast QR onboarding errors and blocked installatio
 
 This is a community guide, not an Acurast app or an automatic installer. Installing Acurast itself is a separate action on your phone, through the official onboarding flow. An AI assistant also needs your permission and suitable local tools before it can change anything.
 
+## Before you choose a route
+
+Two things decide whether setup works on a given phone. Check both before resetting anything.
+
+**Your Android version.** On Android 16 and newer, Core's QR onboarding has been observed failing at device-owner activation, showing *"Something went wrong. Contact your IT team"* with only a Reset button. Repeated factory resets do not clear it. [What to do on Android 16 or newer](docs/troubleshooting.md#android-16-and-newer-device-owner-failure).
+
+**Your Core version.** The Hub QR's advanced field may name an older build. For the USB route, install **1.27.1 or newer**. Core 1.26.0 accepted our pairing data and discarded it silently, with no error on the phone, in the app, or in the command result. [Version notes](docs/downloads.md).
+
 ## Choose how you want help
 
 | Your preference | Open this page |
 | --- | --- |
+| Your phone is on Android 16 or newer | **[Read this first](docs/troubleshooting.md#android-16-and-newer-device-owner-failure)** — QR onboarding may not complete |
 | Let Claude, Kimi, or Codex help with the technical work | **[AI-assisted setup](docs/ai-assisted.md)** — copy a prompt with the repo URL |
 | Follow the phone steps yourself | **[Start here](docs/start-here.md)** — a complete browser-readable walkthrough |
 | Samsung is blocking setup | [Samsung steps](docs/samsung.md) |
@@ -69,7 +78,7 @@ If a step or message looks suspicious, stop and check the [troubleshooting guide
 
 ## Our field results
 
-Field notes recorded 2026-09-09, using Core **1.27.1 (136)** and a community USB method. Device versions and outcomes below come from those sessions; they are individual observations, not a compatibility guarantee. The official QR walkthrough follows upstream documentation; our recorded successes used the USB alternative.
+Field notes recorded 2026-09-09 and 2026-09-12, using Core **1.27.1 (136)** and a community USB method. Device versions and outcomes below come from those sessions; they are individual observations, not a compatibility guarantee. The official QR walkthrough follows upstream documentation; our recorded successes used the USB alternative.
 
 | Device | Android | Recorded result |
 | --- | --- | --- |
@@ -80,7 +89,7 @@ Field notes recorded 2026-09-09, using Core **1.27.1 (136)** and a community USB
 | Xiaomi 23124RA7EO | 13 / MIUI 14 | Owner confirmed online after extra USB permissions and setup-account removal |
 | Google Pixel 9 Pro Fold | 17 | Owner confirmed online on Core 1.27.1, after 1.26.0 silently discarded the same pairing |
 
-A later session established something the earlier notes had left open: the Core version named in our Hub QR, 1.26.0, accepted USB-delivered pairing and discarded it without any error, while 1.27.1 applied it. For the USB route, install 1.27.1 or newer and do not rely on the version in the QR. See [version notes](docs/downloads.md).
+The 2026-09-12 session closed a question the earlier notes had left open, by identifying the app version as the reason a correctly formed pairing could be accepted and then dropped. The [version notes](docs/downloads.md) record what that does and does not establish.
 
 The normal self-service walkthrough uses the phone's setup QR scanner. Our [USB technical notes](docs/usb-onboarding.md) describe an unofficial alternative that needs existing local tools and a reviewed pairing implementation; this guide does not silently fetch or run one.
 
