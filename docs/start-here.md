@@ -22,6 +22,8 @@ Core will take over the dedicated phone. Its official setup starts with erasing 
 3. Confirm the selected account is the one you intend to use for this phone.
 4. Choose **Add New Device**. Keep the displayed QR open on the computer.
 
+If you open **Advanced**, the Custom Processor APK URL may name an older build than the current release. For the phone-only route on this page we have no evidence that this matters. For the advanced USB route it decides the outcome — see [version notes](downloads.md). The URL can be pointed at a newer build without invalidating the QR, because the QR's checksum covers the app's signing certificate rather than the file.
+
 Button wording can vary. If you do not yet have a supported wallet, that is a separate prerequisite; this guide does not install one or create accounts for you. Do not type wallet recovery words into a terminal, GitHub, or AI chat.
 
 ## 3. Get to the phone's welcome screen
