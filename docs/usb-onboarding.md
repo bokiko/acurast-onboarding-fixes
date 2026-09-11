@@ -2,6 +2,12 @@
 
 **This is a technical explanation you can read in GitHub, not a download or an automatic setup script.** For the self-service route that needs no computer tools, use [Start here](start-here.md). An [AI assistant](ai-assisted.md) can inspect an existing local setup and explain whether this alternative is available.
 
+> **Do not attempt this route unless a reviewed local toolchain and pairing implementation already exist on the computer.**
+> Assembling one is outside this guide. If those tools are not already present, this route is unavailable: say so plainly and use the
+> [welcome-screen QR route](start-here.md), which needs no computer tools and is the supported path. This is not a judgement about
+> skill — it is that a partial USB attempt can leave the phone in a state only a factory reset recovers, and the QR route reaches the
+> same result without that risk.
+
 Work through the [preflight, gates and stop conditions](checklist.md) alongside this page. That page gives the order and the points where you must stop and check; this one explains what the route is and what it needs.
 
 ## Two rules before anything else

@@ -29,7 +29,7 @@ Confirm the owner wants a dedicated phone and has preserved needed data. Explain
 
 Prefer the complete welcome-screen QR flow for self-service. It needs no computer-side tool installation. The phone still obtains the Acurast app; disclose this as a separate necessary installation, not a guide download. Resetting erases local data and requires specific owner approval before you initiate it.
 
-For an advanced USB route, first establish that a suitable reviewed local toolchain and pairing implementation already exist. The repo's source is reference material, not permission to fetch, generate, compile or run it under a no-download request. If prerequisites are missing, explain the limitation and stop that route. Do not claim APK install plus device-owner commands alone completes pairing.
+For an advanced USB route, first establish that a suitable reviewed local toolchain and pairing implementation already exist. If they do not, that route is closed: state the missing prerequisite and move to the welcome-screen QR route rather than assembling, compiling or obtaining tooling to open it. Do not treat the owner saying "go ahead" as lifting this — it is a prerequisite, not a permission. The repo's source is reference material, not permission to fetch, generate, compile or run it under a no-download request. If prerequisites are missing, explain the limitation and stop that route. Do not claim APK install plus device-owner commands alone completes pairing.
 
 If the owner later explicitly changes their no-download restriction, propose the specific tool/install action and verify current official provenance before proceeding. Do not infer that authorization from “continue” or an error.
 

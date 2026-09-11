@@ -11,7 +11,7 @@ Checked 2026-09-09. Upstream documents may change; field observations apply to t
 | [Samsung Auto Blocker](https://www.samsung.com/us/support/answer/ANS10003636/) | Outside-store installation and USB command restrictions |
 | [AirDroid Xiaomi USB setup](https://help.airdroid.com/hc/en-us/articles/360045329413-How-to-Enable-USB-debugging-on-Xiaomi) | Third-party description of the extra Xiaomi USB security setting and sign-in |
 
-Field evidence: private setup records and explicit user confirmations, summarized without identifiers. The original 1.27.1 APK was inspected locally: its pairing parser expects a PersistableBundle, which informed the helper. Full APK decompilation and private logs are not published.
+Field evidence: private setup records and explicit user confirmations, summarized without identifiers. The original 1.27.1 APK was inspected locally: its pairing parser expects a PersistableBundle, which informed the helper. That inspection was of 1.27.1 specifically, and a later session found 1.26.0 discarding the same USB-delivered bundle, so the parser finding should not be read as applying to earlier builds. Full APK decompilation and private logs are not published.
 
 Planning received Claude and Kimi critiques. Those were reviews of supplied observations, not device tests or independent verification. The repository maintainer is responsible for the published claims.
 

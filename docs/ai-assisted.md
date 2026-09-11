@@ -18,8 +18,11 @@ This is an ordinary message to the AI, **not a command for Terminal or PowerShel
 Read this instruction file directly from GitHub:
 https://github.com/bokiko/acurast-onboarding-fixes/blob/main/AI-ONBOARDING.md
 Then read the guide pages it references, also directly from GitHub.
-If you end up doing the advanced USB route, follow docs/checklist.md in order
-and stop at any check it marks as a stop condition.
+Prefer the phone's welcome-screen QR route. Only consider the advanced USB route
+if a reviewed local toolchain and pairing implementation are already installed on
+this computer; if they are not, tell me so and use the QR route instead of
+building or downloading tools. If you do use the USB route, follow
+docs/checklist.md in order and stop at any check it marks as a stop condition.
 
 Help me set up my own dedicated Android phone for Acurast Core, not Lite.
 I am not a coder. Explain the next action simply and do the computer work only where
@@ -41,7 +44,7 @@ If the assistant cannot read GitHub, open [AI-ONBOARDING.md](../AI-ONBOARDING.md
 
 ## 3. What a helpful assistant should do
 
-It should first establish whether it has local access, which phone is connected, and what tools already exist. If it needs ADB or another program that is missing, it should explain that limitation and offer the manual QR route. It must not silently install software to make its plan work.
+It should first establish whether it has local access, which phone is connected, and what tools already exist. If it needs ADB or another program that is missing, it should explain that limitation and offer the manual QR route. It must not silently install software to make its plan work. A missing toolchain closes the USB route rather than becoming a task to solve: the right response is the QR route, not a build.
 
 Once you authorize a concrete phone setup plan, it can carry out the supported steps with available tools and inspect the results. If a setting needs your tap, it should give you the exact menu path. It should not make you run a long list of unexplained commands.
 
