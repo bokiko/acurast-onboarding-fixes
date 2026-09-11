@@ -2,7 +2,7 @@
 
 **Read this page in GitHub. It installs nothing and changes no phone by itself.** It is the operational companion to the [USB method](usb-onboarding.md): that page explains what the route requires, this one gives the order to do it in and the points where you must stop and check.
 
-**Precondition zero: the tooling already exists.** If a reviewed local toolchain and pairing implementation are not already on the computer, stop here and use [Start here](start-here.md) instead. Building one is out of scope, and it is not unlocked by the owner's permission — a partial USB attempt can cost a factory reset, and the QR route reaches the same result without that exposure.
+**Precondition zero: the tooling already exists.** If a reviewed local toolchain and pairing implementation are not already on the computer, stop here and use [Start here](start-here.md) instead. On Android 16 or newer, note that the QR route may also fail before device owner is set; if both are unavailable, report that plainly instead of retrying either. Building one is out of scope, and it is not unlocked by the owner's permission — a partial USB attempt can cost a factory reset, and the QR route reaches the same result without that exposure.
 
 This page assumes the prerequisites on the USB page are already met — existing reviewed local tooling, an explicit target serial, and the owner's authorization. If you are setting up your own phone without a computer, use [Start here](start-here.md) instead; none of this applies to the welcome-screen QR route.
 

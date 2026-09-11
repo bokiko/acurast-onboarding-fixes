@@ -28,6 +28,30 @@ Always select the intended device explicitly. Stop after a failed prerequisite i
 | QR expired | Pairing authorization window ended | Generate a fresh Hub QR; never modify its timestamp or signature. |
 | Modified/unlocked firmware | Requirements may not be met | Read [recovery boundaries](recovery.md), not a generic flash recipe. |
 
+## Android 16 and newer device-owner failure
+
+On Android 16 and newer, Core's welcome-screen QR provisioning has been observed downloading the app and then
+aborting, with *"Getting your device ready for work"* followed by *"Something went wrong. Contact your IT team"*
+and only a Reset button. Recorded on Samsung One UI 8 and on a Pixel running Android 17.
+
+This is not a network fault, a wrong QR, or a blocked download. Egress was verified clean in our sessions. It is
+tracked upstream as [acurast-processor-update#112](https://github.com/Acurast/acurast-processor-update/issues/112),
+open since 2026-08-03 with no maintainer reply as of 2026-09-12.
+
+**Repeated factory resets do not fix it.** Stop after the second failure rather than wiping the phone again.
+
+What remains available, in rough order of safety:
+
+- **Processor Lite** on that phone. Lite does not need device owner, so this failure does not apply to it. It is a
+  different product from Core, not a workaround for it.
+- **A different phone** on Android 15 or older for Core.
+- **The community USB route**, but only where a reviewed local toolchain already exists — see
+  [USB method](usb-onboarding.md). It registers device owner through ADB rather than the QR provisioning path that
+  fails here, which is why it can succeed where the QR route does not.
+- **Changing the phone's Android version** is model-specific work with real brick risk from anti-rollback, and this
+  guide provides no flashing recipe. Read [recovery boundaries](recovery.md) and get manufacturer-specific guidance
+  before any such attempt.
+
 ## The fee error means pairing, not funding
 
 A processor that is not yet paired can report a chain error stating it cannot pay a transaction fee. The wording invites an obvious and wrong conclusion.
