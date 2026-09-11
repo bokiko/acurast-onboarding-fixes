@@ -2,7 +2,7 @@
 
 Read these fixes directly in GitHub. USB/tool errors apply only if you or an authorized local assistant already have those tools. No computer installation is required to read this guide. For the phone-only QR route, use [Start here](start-here.md).
 
-Always select the intended device explicitly. Stop after a failed prerequisite instead of running the remaining commands.
+Always select the intended device explicitly. Stop after a failed prerequisite instead of running the remaining commands. The [checklist](checklist.md) gives the order these checks belong in.
 
 | Observation | Meaning / next check | Tested action or next step |
 | --- | --- | --- |
@@ -13,12 +13,27 @@ Always select the intended device explicitly. Stop after a failed prerequisite i
 | `Calling identity is not authorized` from `dpm` | Management permission restriction | Extra Xiaomi USB security permission resolved our instance. This error is not proof of a Xiaomi cause on every phone. |
 | `already some accounts on the device` | Android rejects owner provisioning in current account state | Remove setup accounts through Settings, verify zero accounts, retry. |
 | Existing device owner | Device already managed | Do not overwrite/remove an unrelated administrator. Resolve through its existing management process. |
-| APK installed but no pairing | Installation is only one stage | Check device owner, correct Core package/version, QR validity and typed extras. |
+| APK installed but no pairing | Installation is only one stage | Check device owner, Core version, QR validity and typed extras. Below 1.27.1 see the `Manager: not set` row. |
+| **Overview screen shows `Manager: not set`** | **Pairing data was discarded** | **Check the installed version first. On our Android 17 test, 1.26.0 failed here silently and 1.27.1 succeeded. See [version notes](downloads.md).** |
+| `Processor` row populated but `Manager` empty | Not a partial success | The processor key is generated locally regardless of pairing. Read the `Manager` row, not the `Processor` row. |
+| Chain error about inability to pay fees | The processor is not paired to a manager | Fix the pairing. Do **not** send funds to the processor address; see below. |
 | Helper rejects schema or launch API | Different payload or Android interface | Stop. Do not strip signature fields or improvise an intent; report redacted versions/error. |
 | Activity launch result `0` | Android accepted the activity start | Check disclaimer and Hub. It is not a network success signal. |
+| Activity launch result `101` | Task is pinned in lock-task mode | Nothing will start until lock task is cleared. Inspect the pinned task before assuming Core is broken. |
+| `am force-stop` has no effect | Core is device owner | Expected. Ownership cannot be worked around; see [recovery boundaries](recovery.md). |
+| `pm clear` refused with `SecurityException` | Core is an active device admin | Expected, and not recoverable from a computer. Do not attempt to remove the admin to get around it. |
 | USB vanishes during Core launch | Observed Core lockdown behavior | Inspect phone, read/accept disclaimer if shown, verify Hub status. |
+| Phone sits on the disclaimer screen | Pairing applied but is not complete | The owner must accept within the QR's validity window. An expired payload needs a fresh QR. |
 | Hub still offline | Pairing or connectivity may be incomplete | Check phone's actual message, internet, correct Hub wallet and QR expiry. Do not repeatedly provision blindly. |
 | QR expired | Pairing authorization window ended | Generate a fresh Hub QR; never modify its timestamp or signature. |
 | Modified/unlocked firmware | Requirements may not be met | Read [recovery boundaries](recovery.md), not a generic flash recipe. |
+
+## The fee error means pairing, not funding
+
+A processor that is not yet paired can report a chain error stating it cannot pay a transaction fee. The wording invites an obvious and wrong conclusion.
+
+Sending tokens to the processor address does not fix it. In our observation a working, paired processor on this network held no balance of its own at all, so an empty processor balance is normal rather than the fault. The error appears because an unpaired processor has no manager associated with it yet, and the calls it is attempting are not the one that carries the pairing.
+
+Treat this error as a restatement of `Manager: not set`: the pairing did not happen. Fix that, and do not spend anything trying to fix the symptom.
 
 The helper's transport check does not verify the QR signature, eligibility, network health, or reward status. Keep diagnostics limited to the failing stage. Never attach full `dumpsys account`, logcat, or a QR payload publicly without inspecting and redacting it.

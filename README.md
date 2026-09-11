@@ -39,6 +39,7 @@ This is a community guide, not an Acurast app or an automatic installer. Install
 | Samsung is blocking setup | [Samsung steps](docs/samsung.md) |
 | Xiaomi asks for a SIM/account or blocks USB | [Xiaomi steps](docs/xiaomi.md) |
 | You have a Pixel | [Pixel steps](docs/pixel.md) |
+| You are doing the advanced USB route | [Preflight, gates and stop conditions](docs/checklist.md) — the order to work in, and where to stop |
 | Something failed | [Find your error](docs/troubleshooting.md) |
 
 ## Get help from your AI assistant
@@ -77,6 +78,9 @@ Field notes recorded 2026-09-09, using Core **1.27.1 (136)** and a community USB
 | Samsung SM-A045F | 14 | Owner confirmed online after separate stock restoration/relock; Knox bit stayed tripped |
 | Samsung SM-S918B | 15 | Device owner and pairing launch confirmed; online confirmation not preserved |
 | Xiaomi 23124RA7EO | 13 / MIUI 14 | Owner confirmed online after extra USB permissions and setup-account removal |
+| Google Pixel 9 Pro Fold | 17 | Pairing accepted on Core 1.27.1 after 1.26.0 silently discarded it; online confirmation not preserved |
+
+A later session established something the earlier notes had left open: the Core version named in our Hub QR, 1.26.0, accepted USB-delivered pairing and discarded it without any error, while 1.27.1 applied it. For the USB route, install 1.27.1 or newer and do not rely on the version in the QR. See [version notes](docs/downloads.md).
 
 The normal self-service walkthrough uses the phone's setup QR scanner. Our [USB technical notes](docs/usb-onboarding.md) describe an unofficial alternative that needs existing local tools and a reviewed pairing implementation; this guide does not silently fetch or run one.
 
