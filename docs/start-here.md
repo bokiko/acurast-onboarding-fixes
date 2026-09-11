@@ -47,7 +47,6 @@ Read the final on-phone warning. You may need your PIN and previous account cred
 > open with no maintainer reply as of 2026-09-12. **Do not keep factory resetting** — repeated resets do not clear it.
 > See [what to do on Android 16 or newer](troubleshooting.md#android-16-and-newer-device-owner-failure).
 
-
 This route follows Acurast and Android documentation. Our recorded successful sessions used the separate community USB alternative; we have not independently reproduced this QR flow end to end.
 
 1. At the **initial welcome screen**, tap the **same blank spot six times**.
