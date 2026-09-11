@@ -5,8 +5,12 @@
 > **Do not attempt this route unless a reviewed local toolchain and pairing implementation already exist on the computer.**
 > Assembling one is outside this guide. If those tools are not already present, this route is unavailable: say so plainly and use the
 > [welcome-screen QR route](start-here.md), which needs no computer tools and is the supported path. This is not a judgement about
-> skill — it is that a partial USB attempt can leave the phone in a state only a factory reset recovers, and the QR route reaches the
-> same result without that risk.
+> skill — it is that a partial USB attempt can leave the phone in a state only a factory reset recovers.
+>
+> On **Android 16 or newer** the QR route may itself fail before device owner is set
+> ([#112](https://github.com/Acurast/acurast-processor-update/issues/112)). If that happens and no reviewed toolchain exists, there may
+> be **no available Core route on that phone** — say so and stop, rather than repeating factory resets. See
+> [what to do on Android 16 or newer](troubleshooting.md#android-16-and-newer-device-owner-failure).
 
 Work through the [preflight, gates and stop conditions](checklist.md) alongside this page. That page gives the order and the points where you must stop and check; this one explains what the route is and what it needs.
 
