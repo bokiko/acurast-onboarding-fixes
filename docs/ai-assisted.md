@@ -18,6 +18,8 @@ This is an ordinary message to the AI, **not a command for Terminal or PowerShel
 Read this instruction file directly from GitHub:
 https://github.com/bokiko/acurast-onboarding-fixes/blob/main/AI-ONBOARDING.md
 Then read the guide pages it references, also directly from GitHub.
+If you end up doing the advanced USB route, follow docs/checklist.md in order
+and stop at any check it marks as a stop condition.
 
 Help me set up my own dedicated Android phone for Acurast Core, not Lite.
 I am not a coder. Explain the next action simply and do the computer work only where

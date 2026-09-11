@@ -18,6 +18,8 @@ Resetting may restore defaults. A blocker disabled at the home screen is not a g
 
 ## If an existing local USB setup is being used
 
+Confirm the installed Core version is **1.27.1 or newer** before registering the device owner. The version named in the Hub QR's advanced field may be older. On our Android 17 test an older build accepted the provisioning intent and discarded the pairing with no error shown anywhere, which is not a Pixel-specific behaviour as far as we can tell. See [version notes](downloads.md) and work through the [preflight, gates and stop conditions](checklist.md).
+
 Settings → About phone → Software information → tap **Build number seven times** → enter PIN if asked → return to Settings → Developer options → **USB debugging on**. Accept the trusted computer's authorization prompt on the unlocked phone.
 
 Before device-owner registration, remove setup accounts normally: Settings → Accounts and backup → Manage accounts → account → Remove account. Preserve unsynced data first; this removes the account from the phone, not the cloud account itself.
