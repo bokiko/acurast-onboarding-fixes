@@ -4,6 +4,8 @@ A Pixel 6 Pro on Android 14 completed our community USB method with Core 1.27.1 
 
 For self-service setup, follow [Start here](start-here.md): welcome-screen QR scanning does not require downloading this guide or installing computer tools.
 
+A Pixel 9 Pro Fold on Android 17 later paired on Core 1.27.1 through the same method, but only after Core 1.26.0 — the version named in that account's Hub QR — accepted the provisioning intent and discarded the pairing silently. Install 1.27.1 or newer and confirm the installed version on the phone; see [version notes](downloads.md) and the [checklist](checklist.md).
+
 If using an already-equipped local assistant for USB troubleshooting:
 
 - Enable debugging through Settings → About phone → tap Build number seven times → System → Developer options → USB debugging.

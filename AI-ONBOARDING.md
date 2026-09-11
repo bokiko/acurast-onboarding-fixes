@@ -11,6 +11,7 @@ This is a browser-readable community Acurast Core guide. **Read it and its linke
 - [Troubleshooting](https://github.com/bokiko/acurast-onboarding-fixes/blob/main/docs/troubleshooting.md)
 - [Recovery boundaries](https://github.com/bokiko/acurast-onboarding-fixes/blob/main/docs/recovery.md)
 - [USB method and prerequisites](https://github.com/bokiko/acurast-onboarding-fixes/blob/main/docs/usb-onboarding.md)
+- [Preflight, gates and stop conditions](https://github.com/bokiko/acurast-onboarding-fixes/blob/main/docs/checklist.md)
 - [App provenance](https://github.com/bokiko/acurast-onboarding-fixes/blob/main/docs/downloads.md)
 - [Helper limitations](https://github.com/bokiko/acurast-onboarding-fixes/blob/main/docs/helper-review.md)
 
@@ -32,6 +33,8 @@ For an advanced USB route, first establish that a suitable reviewed local toolch
 
 If the owner later explicitly changes their no-download restriction, propose the specific tool/install action and verify current official provenance before proceeding. Do not infer that authorization from “continue” or an error.
 
+Two conditions decide whether an authorized USB attempt succeeds, and both are easy to miss. Install Core 1.27.1 or newer: the version named in the QR's advanced field may be older, and on our Android 17 test the older build accepted the provisioning intent, started normally and discarded the pairing with no error anywhere. And treat device-owner registration as irreversible: afterwards force-stop has no effect, data clearing is refused, and the admin cannot be removed from a computer, so a failure past that point costs the owner a factory reset. Verify everything verifiable before that step, in the order given by the checklist.
+
 ## Authorized phone work
 
 Use current observed UI and exact errors. Samsung Auto Blocker and both Play Protect switches were off in recorded preparation, but universal necessity and re-enabling behavior were not tested. Explain reduced scanning; do not disable whole security/store packages.
@@ -44,7 +47,7 @@ Never remove another administrator, reset/flash/wipe, change the bootloader, or 
 
 Pairing data must originate from the owner's intended Hub wallet and remain private. Never request recovery words/passwords in chat, print the signed QR payload, or upload it to public QR decoders or another assistant. The actual expiry controls; do not edit signed fields. If a reviewed local USB implementation needs temporary local data, explain this storage step first; reading the repository is separate from writing private setup data.
 
-Check each stage before moving on: correct verified app, accounts/owner readiness, supported typed pairing transport, explicit owner success, pairing launch, then online confirmation. Do not weaken checks or repeat mutations blindly. Core can disable ADB; disconnection is not proof of online status.
+Check each stage before moving on: correct verified app, accounts/owner readiness, supported typed pairing transport, explicit owner success, pairing launch, then online confirmation. Do not weaken checks or repeat mutations blindly. After delivering pairing, read the phone before reporting progress: an overview screen showing `Manager: not set` means the data was discarded, and a populated `Processor` row is not a partial success because that key is generated locally either way. A launch result of `0` means Android started an activity and nothing more. A chain error about inability to pay fees is the same unpaired condition restated, never a reason to send funds. Pairing remains incomplete until the owner accepts the disclaimer within the payload's validity window. Core can disable ADB; disconnection is not proof of online status.
 
 Let the owner read/accept legal disclaimers. Verify the intended processor online in an authorized Hub browser session or ask the owner to confirm. Report exactly which evidence you have. Cleanup may be impossible after lockdown; never claim files were deleted without evidence.
 
