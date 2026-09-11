@@ -4,7 +4,7 @@ Observed on **23124RA7EO, Android 13 / MIUI 14**. Read here in GitHub; no repo d
 
 ## Exact phone steps that resolved our USB restriction
 
-Confirm the installed Core version is **1.27.1 or newer** before registering the device owner. The version named in the Hub QR's advanced field may be older. On our Android 17 test an older build accepted the provisioning intent and discarded the pairing with no error shown anywhere, which is not a Pixel-specific behaviour as far as we can tell. See [version notes](downloads.md) and work through the [preflight, gates and stop conditions](checklist.md).
+Confirm the installed Core version is **1.27.1 or newer** before registering the device owner. The version named in the Hub QR's advanced field may be older. On our Android 17 test an older build accepted the provisioning intent and discarded the pairing with no error shown anywhere, which is not a Pixel-specific behavior as far as we can tell. See [version notes](downloads.md) and work through the [preflight, gates and stop conditions](checklist.md).
 
 1. Settings → About phone → Detailed info and specs / All specs → tap **OS/MIUI version seven times**.
 2. Settings → Additional settings → Developer options → enable **USB debugging**.
