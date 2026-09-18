@@ -14,7 +14,7 @@ If ordinary Settings is accessible, open **Settings → Security and privacy →
 
 Open **Play Store → profile → Play Protect → gear**. Our preparation used **Improve harmful app detection off**, then **Scan apps with Play Protect off**. If asked Pause or Turn off, our choice was **Turn off**. Verify both switches; do not disable the whole Play Store app. These changes reduce protection and were not individually proven necessary on every firmware.
 
-Resetting may restore defaults. A blocker disabled at the home screen is not a guarantee it will remain disabled after another reset. If QR setup still fails, give your [local AI assistant](ai-assisted.md) the exact error; it must follow the USB prerequisites and validation gate.
+Resetting may restore defaults. A blocker disabled at the home screen is not a guarantee it will remain disabled after another reset. If QR setup still fails, give your [local AI assistant](ai-assisted.md) the exact error; it must follow the USB prerequisites and phone checks.
 
 ## If using the community USB procedure
 

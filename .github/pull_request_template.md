@@ -17,7 +17,7 @@ Link an issue if applicable.
 - [ ] Clearly distinguished observed phone results from untested ideas
 - [ ] Reviewed staged content for private data
 
-Describe host checks and any device test separately, or state documentation-only. Do not imply a host check proves phone onboarding. Keep unvalidated helper changes behind the release gate.
+Describe host checks and any device test separately, or state documentation-only. Do not imply a host check proves phone onboarding. State which helper revision was tested and make any remaining uncertainty clear before phone setup.
 
 ## Screenshots
 

@@ -17,157 +17,100 @@
 
 # Acurast setup stopped. What now?
 
-“Something went wrong. Contact your IT team.” An installation Android refuses.
-Or Core opens, but says **Manager: not set**.
+“Something went wrong. Contact your IT team.”
+An app that won’t install. Or **Manager: not set** after setup.
 
-This guide is for phones that got stuck during Acurast Core onboarding.
-The community USB method below got our blocked phones online, including a
-Pixel running Android 17.
+This guide helps you work through those problems using a USB cable and an
+AI assistant on your computer. We used this method to get blocked phones
+online, including a Pixel running Android 17.
 
-**[Start USB setup with an AI assistant →](docs/ai-assisted.md)**
+**[Set up your phone with AI help →](docs/ai-assisted.md)**
 
-No command-line AI? See the [manual USB procedure](docs/usb-onboarding.md).
+Connect your phone, copy the message, and let the assistant guide you.
+Prefer to do it yourself? Follow the [USB steps](docs/usb-onboarding.md).
 
-> **Draft validation:** the revised helper still needs a spare-phone test.
-> Stop before ownership until the [validation record](docs/helper-review.md#release-validation) is complete.
-
-You connect the phone to a computer. The assistant checks the phone, prepares
-the tools, and works through the setup with you.
-
-**Read this guide in your browser. You do not need to download or clone the
-repository. Reading it installs nothing.** USB setup is a separate action:
-it uses computer tools and installs Acurast Core on your phone.
-
-## Start with the error you see
-
-- **QR setup ends with only a Reset button.** We observed this failure on
-  Android 16 and 17. Repeating the same factory reset did not resolve it.
-  The USB route uses a different way to set up Core’s device management.
-- **Android blocks installation or USB commands.** The assistant checks the
-  exact restriction. Samsung and Xiaomi may need different steps.
-- **Core says `Manager: not set`.** Pairing has not completed. Check the Core
-  version first: our Android 17 phone silently discarded USB pairing on
-  1.26.0 and accepted it on 1.27.1.
-- **Core says it cannot pay fees during setup.** Check pairing. Do not send
-  tokens to the processor address to fix this error.
-
-[Find your exact error](docs/troubleshooting.md)
+Read everything here in your browser. There’s no need to download or clone
+this guide, and reading it installs nothing. During setup, the assistant
+helps install the tools you need and Core on your phone.
 
 ## What you need
 
-- A phone you own and can dedicate to Core, running Android 12 or newer.
-  Back up anything you want to keep. The phone must not be rooted, and its
-  bootloader must be locked.
-- A computer, a USB data cable, and an AI assistant that can run commands on
-  that computer. A browser-only chat can explain the steps but cannot operate
-  your USB phone.
-- Wi-Fi, power, and access to your own [Acurast Hub](https://hub.acurast.com/)
-  wallet session.
-- Time to stay with the phone and finish its confirmation screens.
+- **A spare Android phone:** Android 12 or newer, not rooted, with a locked
+  bootloader. Back up anything you want to keep.
+- **A computer and a USB data cable:** the published build steps currently
+  cover Apple Silicon Macs.
+- **An AI assistant that can run commands on that computer.** A browser-only
+  chat can explain the steps, but you’ll need to run the commands yourself.
+- **Wi-Fi, power, and your own [Acurast Hub](https://hub.acurast.com/) wallet.**
 
-**Core takes over the phone for dedicated use.** Once Core is registered as
-device owner, returning the phone to normal use may require a factory reset.
-The assistant must check everything it can before that step.
+Core dedicates the phone to Acurast. To use it as a normal phone again, you
+may need a factory reset.
 
-This method changes how Core is provisioned. Acurast’s device eligibility
-requirements still apply.
+## You connect the phone. The assistant handles the computer work.
 
-## How the AI-assisted setup works
+1. **Connect your phone.** The assistant checks its Android version, setup
+   state, and any Samsung or Xiaomi restrictions.
+2. **Prepare Core.** It gets the tools from the documented sources, checks
+   the official app, and explains what it will change.
+3. **Pair with your Hub.** You save **Copy QR Data** to a private local file.
+   The setup tool reads it directly; you never paste it into AI chat.
+4. **Finish on the phone.** Read and accept Core’s disclaimer if you agree.
+   Then check that your phone is online in your Hub.
 
-Open [AI-assisted setup](docs/ai-assisted.md) and copy the short message into
-an assistant you use on your computer. Read the message before pasting it.
+You handle passwords, wallet approvals, and phone confirmations.
+The assistant explains the next step and checks the result before continuing.
 
-The assistant follows the guide and handles the computer work. You handle
-passwords, wallet approvals, and the phone’s physical confirmations.
+**[Open the setup message →](docs/ai-assisted.md#2-paste-this-into-its-chat-box)**
 
-1. **Check the phone.** It identifies the intended device, reads its current
-   state, and explains any blocker before changing anything.
-2. **Prepare the tools.** It explains any needed downloads, obtains them from
-   the documented sources, and builds the small pairing helper. It verifies
-   the official Core app before installing it.
-3. **Prepare pairing privately.** In your own Hub session, you use
-   **Copy QR Data** and save it to a private local file. The helper reads
-   that file directly. The assistant must not print its contents or load
-   them into the chat.
-4. **Check before committing.** It checks the pairing format and Android
-   transport before registering Core as device owner. A failed check means
-   stop.
-5. **Finish and verify.** You read and accept Core’s disclaimer if you agree.
-   Setup is complete only when the intended processor is confirmed online
-   in your Hub.
+## Keep your wallet and QR private
 
-The USB method uses **Core 1.27.1 or newer**. Our recorded working version is
-**1.27.1 (136)**; later releases need checking. The version named in the Hub
-QR may be older.
+- Never share recovery words, private keys, or passwords with an assistant.
+- Keep the onboarding QR and its data out of chats and public posts.
+- Don’t send tokens to the processor address to fix a pairing error.
 
-[USB procedure](docs/usb-onboarding.md) ·
-[Checks and stop conditions](docs/checklist.md)
+[How your pairing data is handled](docs/ai-assisted.md#3-keep-control-of-the-setup)
 
-## Keep control of the setup
+## Recognise one of these errors?
 
-The assistant’s own permissions determine its access. This guide cannot
-prevent mistakes. Review the setup plan before authorizing changes.
+| What you see | What to do next |
+| --- | --- |
+| QR setup ends with only a Reset button | We saw this on Android 16 and 17. Try the USB steps instead of repeating the same reset. |
+| Android blocks installation or USB commands | Check the [Samsung](docs/samsung.md) or [Xiaomi](docs/xiaomi.md) steps. |
+| Core says **Manager: not set** | Pairing is incomplete. Check the Core version first; 1.27.1 worked where 1.26.0 silently failed in our test. |
+| Core says it cannot pay fees during setup | Check pairing first. Don’t fund the processor address as a fix. |
 
-**An assistant following this guide will never ask you to:**
+[More errors and fixes](docs/troubleshooting.md)
 
-- Paste wallet recovery words, private keys, or passwords into chat.
-- Upload your onboarding QR, signed QR data, or private setup file.
-- Send tokens to a stranger—or to the processor address as a pairing fix.
-- Install an APK or “fix tool” from an unsolicited message.
+## Phones we got online
 
-Keep QR data in a private local file, never in chat.
-[Privacy and permissions](docs/ai-assisted.md#3-keep-control-of-the-setup) ·
-[Helper source and build](tools/README.md) ·
-[Technical limits](docs/helper-review.md)
-
-## Phones we tested
-
-These are results from our September 9 and 12, 2026 sessions using Core
-1.27.1 and the community USB method. “Online” means the owner confirmed the
-processor reporting. Results apply to these phones and versions.
+Recorded in September 2026 using Core 1.27.1 and the community USB method.
 
 | Phone | Android | Result |
 | --- | --- | --- |
-| Pixel 9 Pro Fold | 17 | Online after 1.26.0 silently discarded pairing |
-| Pixel 6 Pro | 14 | Online; phone had undergone a separate OS downgrade |
+| Pixel 9 Pro Fold | 17 | Online after updating Core from 1.26.0 to 1.27.1 |
+| Pixel 6 Pro | 14 | Online after a separate OS downgrade |
 | Samsung Galaxy A05 | 14 | Online |
-| Samsung Galaxy A04 | 14 | Online after separate stock restoration and relock; Knox remained tripped |
-| Samsung S23 Ultra | 15 | Device owner and pairing launch confirmed; online confirmation not preserved |
-| Xiaomi Redmi Note 13 | 13 | Online after extra USB permission and setup-account removal |
+| Samsung Galaxy A04 | 14 | Online after separate stock restoration; Knox remained tripped |
+| Xiaomi Redmi Note 13 | 13 | Online after extra USB permission and account removal |
 
-The previous guarded helper completed onboarding on the Pixel 9 Pro Fold.
-The revised helper still needs a phone test; earlier sessions used the original
-helper. These results do not guarantee compatibility with every phone or
-future Core release. [Field record](docs/sources.md)
+On the S23 Ultra running Android 15, we recorded device ownership and the
+pairing launch, but did not preserve online confirmation.
 
-Stock restoration and Android downgrades are separate, model-specific work.
-They are not routine steps in this USB guide.
-
-[Samsung notes](docs/samsung.md) ·
-[Xiaomi notes](docs/xiaomi.md) ·
-[Pixel notes](docs/pixel.md) ·
-[App verification](docs/downloads.md)
-
-## If you are still blocked
-
-Stop at the failed step. An installed app, a successful launch command, or a
-disconnected USB cable does not prove pairing.
-
-Use [troubleshooting](docs/troubleshooting.md), or
-[report the problem](https://github.com/bokiko/acurast-onboarding-fixes/issues/new/choose)
-with your phone model, Android and Core versions, the last successful step,
-and the error. Remove accounts, serial numbers, QR codes, and other private
-details from screenshots and logs.
+These are individual phone results. The latest helper changes have passed
+computer tests and still need a full phone test.
+[What was tested](docs/helper-review.md) · [Field notes](docs/sources.md)
 
 For the standard welcome-screen QR method, use
-[Acurast’s official onboarding instructions](https://docs.acurast.com/processors/become-compute-provider/).
+[Acurast’s official instructions](https://docs.acurast.com/processors/become-compute-provider/).
 
 ---
 
-Community guide by [@bokiko](https://bokiko.io), not an official Acurast product.
+Community guide by [@bokiko](https://bokiko.io).
 
-[Recovery boundaries](docs/recovery.md) ·
-[Sources](docs/sources.md) ·
+[Troubleshooting](docs/troubleshooting.md) ·
+[Technical USB steps](docs/usb-onboarding.md) ·
+[Source and build](tools/README.md) ·
+[Recovery notes](docs/recovery.md) ·
 [Contribute](CONTRIBUTING.md) ·
 [MIT license](LICENSE)
 

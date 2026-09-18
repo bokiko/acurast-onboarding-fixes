@@ -2,7 +2,7 @@
 
 This route uses a computer and USB cable to install the official Core app, register device ownership, and deliver the Hub's signed pairing data. You can use [AI-assisted help](ai-assisted.md) or follow the commands below manually.
 
-**Draft validation procedure:** the revised helper has not completed a new phone test. Stop before ownership unless this is a specifically authorized spare-phone validation session. See [release validation](helper-review.md#release-validation). macOS Apple Silicon is the host build checked here; other hosts are not yet validated.
+The build steps cover macOS Apple Silicon. See [what has been tested](helper-review.md#release-validation) for the difference between earlier phone results and the latest helper changes.
 
 Reading requires no download or clone. Actual setup requires the [pinned tools and source](../tools/README.md). Work through the [checklist](checklist.md) at every stage. Commands are separate stages, not a script to paste and run end to end. Stop whenever a command fails.
 
@@ -69,7 +69,7 @@ Expected: typed bundle and all five fields verified, launch interface matched, a
 
 ## Ownership — stop at Gate A
 
-Complete [Gate A](checklist.md#gate-a--the-last-reversible-point), including the release gate. Core must not be running; re-check accounts, profiles, owner state, version, file identity, and expiry. The owner must understand that recovery may require a reset.
+Complete [Gate A](checklist.md#gate-a--the-last-reversible-point). Explain that this helper revision has passed computer tests but has not yet completed a full phone test, and confirm the owner's setup authorization. Core must not be running; re-check accounts, profiles, owner state, version, file identity, and expiry. The owner must understand that recovery may require a reset.
 
 Only then, in an authorized session:
 

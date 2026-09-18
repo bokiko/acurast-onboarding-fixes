@@ -2,7 +2,7 @@
 
 Read this page alongside the [USB procedure](usb-onboarding.md). Reading installs nothing. An authorized setup may obtain the [pinned toolchain and helper](../tools/README.md); missing tools are a prerequisite to resolve, not permission to improvise.
 
-**Release gate:** this revised helper still needs a separately authorized spare-phone test. Ordinary onboarding stops before ownership until the [validation record](helper-review.md#release-validation) is complete.
+The [test record](helper-review.md#release-validation) distinguishes earlier phone results from the revised helper's computer tests. Explain that difference before the owner authorizes setup.
 
 ## Rule 1 — install 1.27.1 or newer
 
@@ -36,7 +36,7 @@ That does not mean every pairing failure requires a reset: the recorded upgrade 
 
 Immediately before ownership, re-check the target, foreground user, account/profile/owner state, installed Core version, that Core is not running, and payload validity. The staged bytes must still match the checked local file. Re-run the on-phone check. Confirm the owner is present for the disclaimer and understands potential reset recovery.
 
-Require the release gate to be closed, or explicit authorization for this specific spare-phone validation session. A build passing on a computer does not close that gate.
+Confirm the owner understands the current test coverage and authorizes this phone's setup. A successful computer build does not replace the checks on the connected phone.
 
 ## Gate B — did the pairing actually apply?
 

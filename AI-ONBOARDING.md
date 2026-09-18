@@ -14,7 +14,7 @@ Establish whether you can run commands on the computer connected to the phone. B
 
 Prefer the community USB route for blocked Core onboarding when prerequisites are met. The [official route](docs/official-route.md) is a separate option, not a reason to repeat a failed reset.
 
-**Release gate:** the revised helper still needs the device validation recorded in docs/helper-review.md. Ordinary onboarding must stop before device-owner registration until that gate is closed. A specifically authorized validation session on an identified spare phone is separate work. Repository editing never authorizes phone operation.
+Before the owner agrees to dedicate the phone, explain the current test coverage in docs/helper-review.md: the previous helper completed phone onboarding; the revised source has passed host checks but has not completed a full phone test. Do not claim broader validation. Proceed within the owner's concrete setup authorization only when the checklist and checks on that phone pass. Repository editing never authorizes phone operation.
 
 ## Authorized phone work
 

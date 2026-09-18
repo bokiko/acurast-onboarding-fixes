@@ -2,7 +2,7 @@
 
 Reading this page installs nothing. In an authorized USB setup, you or your assistant may obtain the specific files below and build the helper locally. No repository clone, automatic installer, root access, or phone access is needed to build it.
 
-**Status:** host build and host tests are recorded in [helper review](../docs/helper-review.md#release-validation). The revised helper still needs an authorized spare-phone test before ordinary onboarding. Follow the [USB procedure](../docs/usb-onboarding.md) and [checklist](../docs/checklist.md); do not jump from a successful build to device ownership.
+**Status:** host build and host tests are recorded in [helper review](../docs/helper-review.md#release-validation). The revised helper has not yet completed a full phone test; earlier phone results apply to the previous helper. Follow the [USB procedure](../docs/usb-onboarding.md) and [checklist](../docs/checklist.md); do not jump from a successful build to device ownership.
 
 ## Supported build recipe
 

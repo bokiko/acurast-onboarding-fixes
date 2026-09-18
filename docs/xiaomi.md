@@ -1,6 +1,6 @@
 # Xiaomi: the extra USB permission
 
-Observed on **23124RA7EO, Android 13 / MIUI 14**. Read here in GitHub; no repo download is needed. The following findings concern the [community USB procedure](usb-onboarding.md). Use its documented toolchain and validation gate.
+Observed on **23124RA7EO, Android 13 / MIUI 14**. Read here in GitHub; no repo download is needed. The following findings concern the [community USB procedure](usb-onboarding.md). Use its documented toolchain and phone checks.
 
 ## Exact phone steps that resolved our USB restriction
 

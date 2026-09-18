@@ -20,7 +20,7 @@ Neither program verifies the Hub's cryptographic pairing signature. Certificate 
 
 ## Release validation
 
-Status on **2026-09-18**: **host checks passed; phone validation pending. Ordinary onboarding remains stopped before ownership.**
+Status on **2026-09-18**: **host checks passed; a full phone test of this revision is still pending.**
 
 | Check | Evidence |
 | --- | --- |
@@ -46,14 +46,14 @@ The [source checksum file](../tools/source.sha256) binds the helper and validato
 
 ### Remaining spare-phone test
 
-Use an identified, backed-up spare phone with explicit authorization for the specific test. Start from the pasted prompt for this PR's exact revision, without relying on a pre-existing helper. Do not treat work on this repository as phone permission.
+Use an identified, backed-up spare phone with explicit authorization for the specific test. Start from the pasted prompt for the exact source revision being tested, without relying on a pre-existing helper. Do not treat work on this repository as phone permission.
 
 1. Establish eligibility, vendor permissions, user/account/profile/owner state, and the exact installed APK identity.
 2. Confirm invalid synthetic fixtures fail on Android without leaking values or changing ownership. Check size, malformed input, timestamps, supported schema, runtime errors, and hidden-interface compatibility. Do not launch fabricated pairing data.
 3. Create the real Hub file privately; verify strict host validation, byte identity after transfer, permissions, and on-phone check mode. Confirm check mode does not launch Core or change management.
 4. Record all Gate A evidence before specifically authorized ownership. Verify owner registration, accepted launch, phone-side pairing state, owner acceptance within the validity window, and intended Hub online status.
 5. Record ADB lockdown timing and exactly which private files could be removed. Do not deliberately strand an enrolled phone to test launch failures.
-6. Review redacted evidence and confirm the guide's supported scope. Remove the release hold only after the exact source/recipe has completed this test. A result on one device does not justify claiming all Android/OEM combinations.
+6. Review redacted evidence and confirm the guide's supported scope. Update the phone-test record only after the exact source/recipe has completed this test. A result on one device does not justify claiming all Android/OEM combinations.
 
 Android 12 and 16 runtime coverage remains unverified unless tested separately. Tests requiring a reset, firmware changes, or replacing a paired processor need their own plan and approval.
 

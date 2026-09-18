@@ -45,7 +45,7 @@ What remains available, in rough order of safety:
 - **Processor Lite** on that phone. Lite does not need device owner, so this failure does not apply to it. It is a
   different product from Core, not a workaround for it.
 - **Another eligible phone**, while recognizing that Android version alone does not guarantee successful onboarding.
-- **The community USB route**, with the documented toolchain and release-validation gate — see
+- **The community USB route**, with the documented toolchain and phone checks — see
   [USB method](usb-onboarding.md). It registers device owner through ADB rather than the QR provisioning path that
   fails here, which is why it can succeed where the QR route does not.
 - **Changing the phone's Android version** is model-specific work with real brick risk from anti-rollback, and this
