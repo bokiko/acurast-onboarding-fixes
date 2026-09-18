@@ -2,11 +2,11 @@
 
 A Pixel 6 Pro on Android 14 completed our community USB method with Core 1.27.1 (136), and the owner confirmed it online. This is one field result, not a guarantee for every Pixel.
 
-For self-service setup, follow [Start here](start-here.md): welcome-screen QR scanning does not require downloading this guide or installing computer tools.
+For blocked setup, use [AI-assisted help](ai-assisted.md) or the [manual USB procedure](usb-onboarding.md). The Pixel 6 Pro had undergone a separate OS downgrade before the recorded Android 14 session; this guide does not provide a downgrade recipe.
 
 A Pixel 9 Pro Fold on Android 17 later paired on Core 1.27.1 through the same method, but only after Core 1.26.0 — the version named in that account's Hub QR — accepted the provisioning intent and discarded the pairing silently. Install 1.27.1 or newer and confirm the installed version on the phone; see [version notes](downloads.md) and the [checklist](checklist.md).
 
-If using an already-equipped local assistant for USB troubleshooting:
+For an authorized USB setup using the documented toolchain:
 
 - Enable debugging through Settings → About phone → tap Build number seven times → System → Developer options → USB debugging.
 - Accept the trusted computer prompt on the unlocked phone.

@@ -4,4 +4,4 @@ You can report a result or suggest a correction using GitHub's website. No local
 
 Include model (no serial), Android/vendor OS version, Core version, route, exact sanitized error and last successful stage. Distinguish installed, owner set, pairing launched and confirmed online.
 
-Never post QR data/images, pairing signatures, account identifiers, recovery words, Wi-Fi secrets, unreviewed logs or device backups. Describe untested ideas as untested. Keep instructions readable in the browser and do not reintroduce automatic downloads or installer commands.
+Never post QR data/images, pairing signatures, account identifiers, recovery words, Wi-Fi secrets, unreviewed logs or device backups. Describe untested ideas as untested. Keep reading browser-only. Actual USB setup may use the documented, verified tool downloads within the owner's authorization; do not introduce automatic installers or hidden downloads. Separate host tests from phone tests and preserve the release-validation gate until the exact helper revision completes an authorized device test.
