@@ -20,7 +20,7 @@ Neither program verifies the Hub's cryptographic pairing signature. Certificate 
 
 ## Release validation
 
-Status on **2026-09-18**: **host checks passed; phone validation pending. Keep PR #7 in draft.**
+Status on **2026-09-18**: **host checks passed; phone validation pending. Ordinary onboarding remains stopped before ownership.**
 
 | Check | Evidence |
 | --- | --- |
