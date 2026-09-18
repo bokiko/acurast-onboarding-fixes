@@ -1,54 +1,102 @@
-# Community USB method: what it requires
+# Community USB method
 
-**This is a technical explanation you can read in GitHub, not a download or an automatic setup script.** For the self-service route that needs no computer tools, use [Start here](start-here.md). An [AI assistant](ai-assisted.md) can inspect an existing local setup and explain whether this alternative is available.
+This route uses a computer and USB cable to install the official Core app, register device ownership, and deliver the Hub's signed pairing data. You can use [AI-assisted help](ai-assisted.md) or follow the commands below manually.
 
-> **Do not attempt this route unless a reviewed local toolchain and pairing implementation already exist on the computer.**
-> Assembling one is outside this guide. If those tools are not already present, this route is unavailable: say so plainly and use the
-> [welcome-screen QR route](start-here.md), which needs no computer tools and is the supported path. This is not a judgement about
-> skill — it is that a partial USB attempt can leave the phone in a state only a factory reset recovers.
->
-> On **Android 16 or newer** the QR route may itself fail before device owner is set
-> ([#112](https://github.com/Acurast/acurast-processor-update/issues/112)). If that happens and no reviewed toolchain exists, there may
-> be **no available Core route on that phone** — say so and stop, rather than repeating factory resets. See
-> [what to do on Android 16 or newer](troubleshooting.md#android-16-and-newer-device-owner-failure).
+**Draft validation procedure:** the revised helper has not completed a new phone test. Stop before ownership unless this is a specifically authorized spare-phone validation session. See [release validation](helper-review.md#release-validation). macOS Apple Silicon is the host build checked here; other hosts are not yet validated.
 
-Work through the [preflight, gates and stop conditions](checklist.md) alongside this page. That page gives the order and the points where you must stop and check; this one explains what the route is and what it needs.
+Reading requires no download or clone. Actual setup requires the [pinned tools and source](../tools/README.md). Work through the [checklist](checklist.md) at every stage. Commands are separate stages, not a script to paste and run end to end. Stop whenever a command fails.
 
-## Two rules before anything else
+## Prepare the computer and phone
 
-**Install Core 1.27.1 or newer.** The version named in the QR's advanced field may be older — ours said 1.26.0. On a Pixel 9 Pro Fold running Android 17, 1.26.0 accepted the provisioning intent and then silently discarded the pairing, showing no error anywhere. The same phone paired immediately on 1.27.1. See [version notes](downloads.md).
+Build the helper and verify the official APK using [tools/README.md](../tools/README.md) and [app verification](downloads.md). Keep the build folder separate from private pairing data. Do not use an APK from a QR download URL without checking official provenance.
 
-**Registering the device owner is a one-way door.** Afterwards `am force-stop` has no effect, `pm clear` is refused, and the active admin cannot be removed from a computer. There is no second attempt: a pairing that fails after that point costs a factory reset. Everything that can be verified beforehand must be verified beforehand.
+Use a dedicated, backed-up Android 12+ phone with eligible stock firmware, a locked bootloader, and no root. Resolve existing accounts and vendor USB restrictions using the applicable [Samsung](samsung.md), [Xiaomi](xiaomi.md), or [Pixel](pixel.md) notes. Do not remove unrelated management or overwrite an existing processor.
 
-## The stages observed in our sessions
+Select the target privately with ADB's device list, then set `CORE_SERIAL` locally to its exact serial. Never paste serials into public logs. Set `CORE_ADB` to the absolute path of the verified platform-tools/adb binary and `CORE_WORK` to the absolute build folder. No example value is a real device identifier.
 
-1. Identify the correct phone with already-installed ADB, check firmware indicators, and confirm no competing management.
-2. Resolve vendor USB restrictions and remove setup accounts from the phone normally.
-3. Verify the official Core app's provenance and installed version, and confirm it is 1.27.1 or newer. The recorded working file was Core 1.27.1 (136); see [version notes](downloads.md).
-4. Prepare the owner's fresh single-device Hub pairing data privately.
-5. Use a reviewed local helper to construct the typed Android provisioning bundle and check transport compatibility.
-6. Re-confirm the preflight conditions, then register Core as device owner and deliver the unchanged signed pairing data. Registering the owner starts Core, so treat the app's state as unknown and check it rather than assuming.
-7. Confirm on the phone that the pairing applied before going further, have the owner accept the disclaimer inside the QR's window, then verify the intended processor in Hub.
+For an authorized phone inspection:
 
-Stage 7 is the one most easily skipped. A phone that shows its ordinary overview screen with `Manager: not set` has not paired, regardless of what the launch reported. Read the `Manager` row: the `Processor` row fills in from a locally generated key whether or not pairing succeeded.
+```sh
+"$CORE_ADB" -s "$CORE_SERIAL" shell getprop ro.build.version.sdk
+"$CORE_ADB" -s "$CORE_SERIAL" shell am get-current-user
+"$CORE_ADB" -s "$CORE_SERIAL" shell getprop ro.boot.verifiedbootstate
+"$CORE_ADB" -s "$CORE_SERIAL" shell getprop ro.boot.flash.locked
+```
 
-## Why there is no one-line pairing command here
+Require API 31+, foreground user 0, and expected locked/verified stock indicators. Missing or conflicting indicators need investigation; they do not by themselves prove eligibility. Inspect Android Settings for zero accounts, no work profile/secondary users, and no existing device management. Reconcile with locally inspected system state; do not print raw account or policy dumps into chat.
 
-Our original helper placed five Hub strings—account, accountType, timestamp, signature and type—inside an Android **PersistableBundle** under `android.app.extra.PROVISIONING_ADMIN_EXTRAS_BUNDLE`. It launched Core's `MainActivity` with `android.app.action.PROVISIONING_SUCCESSFUL` using Android shell.
+Only after the app checks and an authorized installation plan:
 
-Ordinary `am start --es` string extras are not equivalent to that bundle. APK installation and `dpm set-device-owner` alone do not complete Hub pairing. We will not offer an incomplete command sequence as if it did.
+```sh
+"$CORE_ADB" -s "$CORE_SERIAL" install "$CORE_WORK/processor-1.27.1.apk"
+```
 
-The [helper source](../tools/CoreProvision.java) is available to **read online** for technical review. This browser-first guide does not tell readers to download, compile, or run it. If an assistant does not already have suitable reviewed local tools, it must explain that prerequisite and stop the USB route rather than fetch or invent a helper silently. Any later request to obtain or create tools is a separate decision outside this no-download-computer workflow.
+If an app is already installed, stop to identify its version, signer, and pairing state. Do not add replacement, downgrade, or clear-data flags automatically. Confirm the installed package and version, not just the downloaded filename. Package is `com.acurast.attested.executor.canary`; the tested version is 1.27.1 / 136.
 
-## Required checks before an authorized USB attempt
+## Private pairing file
 
-- Existing local ADB access, explicit target serial and version/provenance checks.
-- Installed Core version 1.27.1 or newer, confirmed on the phone rather than assumed from the QR.
-- Dedicated, backed-up phone; no unrelated device owner; account state actually inspected.
-- Xiaomi's additional USB security permission when required. An APK installed manually does not grant it.
-- Fresh QR from the intended Hub wallet, private handling, actual expiry respected. No timestamp/signature edits or public QR decoder.
-- Typed-bundle check before ownership. Transport success is not signature authentication.
-- Owner registration explicitly successful before pairing, followed by a phone-side check that the pairing applied, then Hub verification.
-- The owner available to accept the disclaimer before the payload expires. Pairing that is applied but never accepted still ends as a failed onboarding.
+Create a new private directory outside the repository and cloud sync, with mode 700. In a trusted local editor without AI/cloud features, the owner saves Hub **Copy QR Data** as plain UTF-8 `payload.json` there. Set the file mode to 600. Set `CORE_PAYLOAD` to its absolute path. Do not put the payload in a command, clipboard-reading tool, chat, screenshot, or public QR decoder.
 
-Core may disable debugging during lockdown. Staged private files may remain if ADB disappears; do not promise automatic cleanup. [Review limits](helper-review.md) and [recovery boundaries](recovery.md) explain the remaining caveats.
+Using the public signer-certificate SHA-256 hex digest from verified apksigner output, set `CORE_CERT_SHA256` to those 64 hex digits. This is an APK certificate digest, not the APK file digest.
+
+```sh
+chmod 700 "$(dirname "$CORE_PAYLOAD")"
+chmod 600 "$CORE_PAYLOAD"
+python3 "$CORE_WORK/check-payload.py" "$CORE_PAYLOAD" "$CORE_CERT_SHA256"
+```
+
+The validator rejects duplicate keys, nonstandard JSON, wrong field types, and certificate mismatches without printing values. Its time check is only a local four-hour age/five-minute future bound. Confirm actual Hub expiry and phone time separately. It does not authenticate the Hub signature.
+
+## Stage and check before ownership
+
+Use a new private staging directory. If it already exists, stop and inspect; do not silently reuse or delete it.
+
+```sh
+"$CORE_ADB" -s "$CORE_SERIAL" shell 'umask 077; mkdir /data/local/tmp/acurast-provision'
+"$CORE_ADB" -s "$CORE_SERIAL" push "$CORE_WORK/helper.zip" /data/local/tmp/acurast-provision/helper.zip
+"$CORE_ADB" -s "$CORE_SERIAL" shell chmod 444 /data/local/tmp/acurast-provision/helper.zip
+"$CORE_ADB" -s "$CORE_SERIAL" push "$CORE_PAYLOAD" /data/local/tmp/acurast-provision/payload.json
+"$CORE_ADB" -s "$CORE_SERIAL" shell chmod 600 /data/local/tmp/acurast-provision/payload.json
+```
+
+Verify directory mode 700, helper mode 444, payload mode 600, and shell ownership. Compare SHA-256 of the local and staged helper and payload privately; do not return payload hashes or file contents to chat. Stop on any mismatch. The folder must not be accessible to other users. Make the DEX archive read-only before loading it.
+
+```sh
+"$CORE_ADB" -s "$CORE_SERIAL" shell 'CLASSPATH=/data/local/tmp/acurast-provision/helper.zip app_process /system/bin CoreProvision /data/local/tmp/acurast-provision/payload.json check'
+```
+
+Expected: typed bundle and all five fields verified, launch interface matched, and check-only completion. The helper requires shell UID 2000 and foreground Android user 0. It does not launch Core in check mode. A host build cannot prove this step works on a given phone.
+
+## Ownership — stop at Gate A
+
+Complete [Gate A](checklist.md#gate-a--the-last-reversible-point), including the release gate. Core must not be running; re-check accounts, profiles, owner state, version, file identity, and expiry. The owner must understand that recovery may require a reset.
+
+Only then, in an authorized session:
+
+```sh
+"$CORE_ADB" -s "$CORE_SERIAL" shell dpm set-device-owner --user 0 com.acurast.attested.executor.canary/com.acurast.attested.executor.lockdown.LockdownDeviceAdminReceiver
+```
+
+Require explicit success and verify that exact component is the device owner for user 0. If access disappears or the result is unclear, inspect the phone and stop rather than executing the next command.
+
+## Deliver pairing and verify
+
+Only after ownership is confirmed:
+
+```sh
+"$CORE_ADB" -s "$CORE_SERIAL" shell 'CLASSPATH=/data/local/tmp/acurast-provision/helper.zip app_process /system/bin CoreProvision /data/local/tmp/acurast-provision/payload.json launch'
+```
+
+The helper only accepts result 0; a nonzero result or exception stops the procedure. Result 0 is not pairing success. Inspect the phone promptly: Manager: not set means pairing is incomplete. A disclaimer requires the owner to read and accept within the actual validity window. Verify the intended processor online in the intended Hub wallet.
+
+Core may disconnect ADB. That is not evidence of online status. Follow [Gate B and Gate C](checklist.md#gate-b--did-the-pairing-actually-apply).
+
+## Cleanup
+
+If ADB remains accessible, remove only the two files created in the dedicated staging directory, then remove the empty directory. Verify they are gone. Remove the private local payload through the owner's file manager, and handle editor/clipboard copies too. Do not promise secure erasure, and disclose phone copies that could not be removed because ADB disappeared.
+
+## Why ordinary string extras are not enough
+
+The helper puts the five unchanged Hub strings inside an Android PersistableBundle under android.app.extra.PROVISIONING_ADMIN_EXTRAS_BUNDLE. It parcel-roundtrips the intent and uses the recorded hidden launch interface for Core's provisioning activity.
+
+Ordinary am start string extras do not create that typed bundle. App installation and device ownership alone do not pair a processor. See [source and build](../tools/README.md), [review limits](helper-review.md), and [recovery boundaries](recovery.md).

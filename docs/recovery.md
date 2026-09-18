@@ -4,9 +4,9 @@
 
 If ADB remains available, inspect the owner and the exact on-device error. A fresh valid Hub payload may be needed, but first establish whether Core is already paired. Do not replace an existing processor identity or repeatedly launch pairing without understanding the state.
 
-Once Core holds device owner, a computer cannot undo it. On our Android 17 test `am force-stop` was accepted but did not stop Core, `pm clear` was refused with a `SecurityException` about `CLEAR_APP_USER_DATA`, and removing the active admin was refused. There is no clean retry from that state, so a pairing that fails after ownership is set leaves a factory reset as the practical exit. Plan the attempt so that everything checkable is checked first; the [checklist](checklist.md) marks where that point is.
+Core ownership has no verified ordinary undo procedure. On our Android 17 test force-stop had no effect, data clearing was refused, and admin removal was refused. Returning the phone to normal use may require a factory reset. A recorded in-place upgrade from Core 1.26.0 to 1.27.1 recovered pairing while ownership remained; that is not an ownership undo or a general retry promise. Diagnose the exact state before proposing a recovery. The [checklist](checklist.md) puts all available checks before ownership.
 
-On a phone whose bootloader is locked, a userdata erase from fastboot is not available either. The reset has to be done from the phone's own recovery, and Core's lockdown may make the Settings route unreachable first.
+Do not assume fastboot or Settings can reset a locked-down phone. Use manufacturer-specific recovery guidance; this guide supplies no generic reset or flashing command.
 
 If ADB disappeared, inspect the phone and Hub. This happened during normal Core lockdown in our sessions. A disclaimer may need acceptance. If the phone is locked down but never pairs, use current Acurast support instructions. A factory reset may be required to return it to general use and will erase local state; ordinary APK uninstall is not a guaranteed device-owner removal mechanism.
 

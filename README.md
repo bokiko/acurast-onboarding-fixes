@@ -1,110 +1,174 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&amp;color=gradient&amp;height=200&amp;section=header&amp;text=Acurast%20Onboarding%20Fixes&amp;fontSize=42&amp;fontColor=ffffff&amp;animation=fadeIn&amp;fontAlignY=38&amp;desc=QR%20setup%20errors.%20Blocked%20installs.%20Clear%20fixes.&amp;descAlignY=58&amp;descAlign=50" alt="Acurast Onboarding Fixes — QR setup errors. Blocked installs. Clear fixes." width="100%" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&amp;color=gradient&amp;height=200&amp;section=header&amp;text=Acurast%20Onboarding%20Fixes&amp;fontSize=42&amp;fontColor=ffffff&amp;animation=fadeIn&amp;fontAlignY=38&amp;desc=Phone%20blocked%20during%20setup%3F%20Start%20here.&amp;descAlignY=58&amp;descAlign=50" alt="Acurast Onboarding Fixes — Phone blocked during setup? Start here." width="100%" />
 </p>
 
 <!-- Badge images are stored in this repository; the decorative waves use an external service. -->
 <p align="center">
-  <a href="https://github.com/bokiko/acurast-onboarding-fixes/blob/main/docs/start-here.md"><img src="https://github.com/bokiko/acurast-onboarding-fixes/raw/refs/heads/main/docs/assets/guide.png" width="158" height="28" alt="Read the live guide" /></a>
+  <a href="docs/ai-assisted.md"><img src="https://github.com/bokiko/acurast-onboarding-fixes/raw/refs/heads/main/docs/assets/guide.png" width="158" height="28" alt="Read the live guide" /></a>
   <a href="https://x.com/bokiko"><img src="https://github.com/bokiko/acurast-onboarding-fixes/raw/refs/heads/main/docs/assets/x.png" width="93" height="28" alt="Follow @bokiko on X" /></a>
 </p>
 
 <p align="center">
-  <a href="docs/start-here.md"><img src="https://github.com/bokiko/acurast-onboarding-fixes/raw/refs/heads/main/docs/assets/android.png" width="106" height="20" alt="Android 12 or newer" /></a>
-  <a href="https://github.com/bokiko/acurast-onboarding-fixes/blob/main/README.md"><img src="https://github.com/bokiko/acurast-onboarding-fixes/raw/refs/heads/main/docs/assets/markdown.png" width="133" height="20" alt="Markdown guide" /></a>
-  <a href="docs/start-here.md"><img src="https://github.com/bokiko/acurast-onboarding-fixes/raw/refs/heads/main/docs/assets/browser.png" width="179" height="20" alt="Read in your browser" /></a>
+  <a href="#what-you-need"><img src="https://github.com/bokiko/acurast-onboarding-fixes/raw/refs/heads/main/docs/assets/android.png" width="106" height="20" alt="Android 12 or newer" /></a>
+  <a href="README.md"><img src="https://github.com/bokiko/acurast-onboarding-fixes/raw/refs/heads/main/docs/assets/markdown.png" width="133" height="20" alt="Markdown guide" /></a>
+  <a href="docs/ai-assisted.md"><img src="https://github.com/bokiko/acurast-onboarding-fixes/raw/refs/heads/main/docs/assets/browser.png" width="179" height="20" alt="Read in your browser" /></a>
   <a href="LICENSE"><img src="https://github.com/bokiko/acurast-onboarding-fixes/raw/refs/heads/main/docs/assets/license.png" width="106" height="20" alt="MIT license" /></a>
 </p>
 
-<p align="center">
-  <a href="docs/start-here.md"><strong>Start here</strong></a> ·
-  <a href="docs/ai-assisted.md"><strong>Use an AI assistant</strong></a> ·
-  <a href="docs/troubleshooting.md"><strong>Find your error</strong></a> ·
-  <a href="#security-and-privacy"><strong>Security and privacy</strong></a>
-</p>
+# Acurast setup stopped. What now?
 
----
+“Something went wrong. Contact your IT team.” An installation Android refuses.
+Or Core opens, but says **Manager: not set**.
 
-A practical guide to fixing Acurast QR onboarding errors and blocked installations on Samsung, Xiaomi, and Pixel phones—with the steps we learned while onboarding real devices.
+This guide is for phones that got stuck during Acurast Core onboarding.
+The community USB method below got our blocked phones online, including a
+Pixel running Android 17.
 
-**Read everything here on GitHub. You do not need to download, clone, or install this repository. Opening these pages does not install software, run commands, or access your phone.**
+**[Start USB setup with an AI assistant →](docs/ai-assisted.md)**
 
-This is a community guide, not an Acurast app or an automatic installer. Installing Acurast itself is a separate action on your phone, through the official onboarding flow. An AI assistant also needs your permission and suitable local tools before it can change anything.
+No command-line AI? See the [manual USB procedure](docs/usb-onboarding.md).
 
-## Before you choose a route
+> **Draft validation:** the revised helper still needs a spare-phone test.
+> Stop before ownership until the [validation record](docs/helper-review.md#release-validation) is complete.
 
-Two things decide whether setup works on a given phone. Check both before resetting anything.
+You connect the phone to a computer. The assistant checks the phone, prepares
+the tools, and works through the setup with you.
 
-**Your Android version.** On Android 16 and newer, Core's QR onboarding has been observed failing at device-owner activation, showing *"Something went wrong. Contact your IT team"* with only a Reset button. Repeated factory resets do not clear it. [What to do on Android 16 or newer](docs/troubleshooting.md#android-16-and-newer-device-owner-failure).
+**Read this guide in your browser. You do not need to download or clone the
+repository. Reading it installs nothing.** USB setup is a separate action:
+it uses computer tools and installs Acurast Core on your phone.
 
-**Your Core version.** The Hub QR's advanced field may name an older build. For the USB route, install **1.27.1 or newer**. Core 1.26.0 accepted our pairing data and discarded it silently, with no error on the phone, in the app, or in the command result. [Version notes](docs/downloads.md).
+## Start with the error you see
 
-## Choose how you want help
+- **QR setup ends with only a Reset button.** We observed this failure on
+  Android 16 and 17. Repeating the same factory reset did not resolve it.
+  The USB route uses a different way to set up Core’s device management.
+- **Android blocks installation or USB commands.** The assistant checks the
+  exact restriction. Samsung and Xiaomi may need different steps.
+- **Core says `Manager: not set`.** Pairing has not completed. Check the Core
+  version first: our Android 17 phone silently discarded USB pairing on
+  1.26.0 and accepted it on 1.27.1.
+- **Core says it cannot pay fees during setup.** Check pairing. Do not send
+  tokens to the processor address to fix this error.
 
-| Your preference | Open this page |
-| --- | --- |
-| Your phone is on Android 16 or newer | **[Read this first](docs/troubleshooting.md#android-16-and-newer-device-owner-failure)** — QR onboarding may not complete |
-| Let Claude, Kimi, or Codex help with the technical work | **[AI-assisted setup](docs/ai-assisted.md)** — copy a prompt with the repo URL |
-| Follow the phone steps yourself | **[Start here](docs/start-here.md)** — a complete browser-readable walkthrough |
-| Samsung is blocking setup | [Samsung steps](docs/samsung.md) |
-| Xiaomi asks for a SIM/account or blocks USB | [Xiaomi steps](docs/xiaomi.md) |
-| You have a Pixel | [Pixel steps](docs/pixel.md) |
-| You are doing the advanced USB route | [Preflight, gates and stop conditions](docs/checklist.md) — the order to work in, and where to stop |
-| Something failed | [Find your error](docs/troubleshooting.md) |
+[Find your exact error](docs/troubleshooting.md)
 
-## Get help from your AI assistant
+## What you need
 
-Open **[AI-assisted setup](docs/ai-assisted.md#2-paste-this-into-its-chat-box)** and copy the message into your assistant. It includes the direct link to [AI-ONBOARDING.md](https://github.com/bokiko/acurast-onboarding-fixes/blob/main/AI-ONBOARDING.md), explains what help you want, and keeps phone changes under your control.
+- A phone you own and can dedicate to Core, running Android 12 or newer.
+  Back up anything you want to keep. The phone must not be rooted, and its
+  bootloader must be locked.
+- A computer, a USB data cable, and an AI assistant that can run commands on
+  that computer. A browser-only chat can explain the steps but cannot operate
+  your USB phone.
+- Wi-Fi, power, and access to your own [Acurast Hub](https://hub.acurast.com/)
+  wallet session.
+- Time to stay with the phone and finish its confirmation screens.
 
-A local assistant can make the computer work much easier. An ordinary browser chat can explain steps, but cannot automatically control your USB phone. [How to use the prompt](docs/ai-assisted.md).
+**Core takes over the phone for dedicated use.** Once Core is registered as
+device owner, returning the phone to normal use may require a factory reset.
+The assistant must check everything it can before that step.
 
-## What success means
+This method changes how Core is provisioned. Acurast’s device eligibility
+requirements still apply.
 
-**App installed → Core registered as device owner → paired to your Hub → confirmed online.** These are different stages. A successful installation or a lost USB connection alone does not prove online status.
+## How the AI-assisted setup works
 
-Core is for a phone you intend to dedicate to Acurast. Its official route starts with a factory reset and later locks down normal phone access. Back up needed data first. Current published requirements include Android 12+, no root, and a locked bootloader. [Official reference](https://docs.acurast.com/processors/become-compute-provider/).
+Open [AI-assisted setup](docs/ai-assisted.md) and copy the short message into
+an assistant you use on your computer. Read the message before pasting it.
 
-## Security and privacy
+The assistant follows the guide and handles the computer work. You handle
+passwords, wallet approvals, and the phone’s physical confirmations.
 
-**Reading this guide installs nothing and gives nobody access to your phone.** Installing Acurast or letting an assistant change your phone is a separate action you control. This community guide is not a security certification or a guarantee that every method works on every phone.
+1. **Check the phone.** It identifies the intended device, reads its current
+   state, and explains any blocker before changing anything.
+2. **Prepare the tools.** It explains any needed downloads, obtains them from
+   the documented sources, and builds the small pairing helper. It verifies
+   the official Core app before installing it.
+3. **Prepare pairing privately.** In your own Hub session, you use
+   **Copy QR Data** and save it to a private local file. The helper reads
+   that file directly. The assistant must not print its contents or load
+   them into the chat.
+4. **Check before committing.** It checks the pairing format and Android
+   transport before registering Core as device owner. A failed check means
+   stop.
+5. **Finish and verify.** You read and accept Core’s disclaimer if you agree.
+   Setup is complete only when the intended processor is confirmed online
+   in your Hub.
 
-- **Keep your secrets private.** Never put passwords, wallet recovery words, private keys, Wi-Fi passwords, or onboarding QR codes in an AI chat or public GitHub issue. Enter credentials only on your phone or in your official wallet. Do not use a public website to decode your QR.
-- **Check where the app comes from.** Use your own [Acurast Hub](https://hub.acurast.com/) session and the official Acurast sources linked in our [app verification notes](docs/downloads.md). Avoid APKs or “fix tools” sent by strangers. Reading this repo requires no download.
-- **Protect your data before setup.** Use a phone you own and intend to dedicate to Core. Back up anything you need before a reset. Read the [recovery boundaries](docs/recovery.md) before considering firmware or bootloader changes.
-- **Stay in control of AI help.** Confirm the correct phone and understand the proposed changes before authorizing them. An assistant should explain commands and missing tools, keep pairing data private, and stop when the next step is unclear. Reading the guide is not permission to reset or modify a phone.
-- **Understand security-setting changes.** Turning off app scanning or installation blockers reduces protection. Our recorded settings are not proven necessary for every phone; re-enabling them afterward was not tested. Follow the relevant phone page and the actual warning, rather than disabling everything.
-- **Share only what is needed for help.** A model, Android version, last successful step, and an error with private details removed are usually enough. Before posting screenshots or logs, hide email addresses, wallet/account details, device serials, QR codes, and passwords. Public posts can be copied even if you delete them later.
+The USB method uses **Core 1.27.1 or newer**. Our recorded working version is
+**1.27.1 (136)**; later releases need checking. The version named in the Hub
+QR may be older.
 
-If a step or message looks suspicious, stop and check the [troubleshooting guide](docs/troubleshooting.md). You can [report a concern on GitHub](https://github.com/bokiko/acurast-onboarding-fixes/issues/new/choose), but describe the problem without posting secrets or a working onboarding QR.
+[USB procedure](docs/usb-onboarding.md) ·
+[Checks and stop conditions](docs/checklist.md)
 
-## Our field results
+## Keep control of the setup
 
-Field notes recorded 2026-09-09 and 2026-09-12, using Core **1.27.1 (136)** and a community USB method. Device versions and outcomes below come from those sessions; they are individual observations, not a compatibility guarantee. The official QR walkthrough follows upstream documentation; our recorded successes used the USB alternative.
+The assistant’s own permissions determine its access. This guide cannot
+prevent mistakes. Review the setup plan before authorizing changes.
 
-| Device | Android | Recorded result |
+**An assistant following this guide will never ask you to:**
+
+- Paste wallet recovery words, private keys, or passwords into chat.
+- Upload your onboarding QR, signed QR data, or private setup file.
+- Send tokens to a stranger—or to the processor address as a pairing fix.
+- Install an APK or “fix tool” from an unsolicited message.
+
+Keep QR data in a private local file, never in chat.
+[Privacy and permissions](docs/ai-assisted.md#3-keep-control-of-the-setup) ·
+[Helper source and build](tools/README.md) ·
+[Technical limits](docs/helper-review.md)
+
+## Phones we tested
+
+These are results from our September 9 and 12, 2026 sessions using Core
+1.27.1 and the community USB method. “Online” means the owner confirmed the
+processor reporting. Results apply to these phones and versions.
+
+| Phone | Android | Result |
 | --- | --- | --- |
-| Samsung SM-A055F | 14 | Owner confirmed online |
-| Google Pixel 6 Pro | 14 | Owner confirmed online |
-| Samsung SM-A045F | 14 | Owner confirmed online after separate stock restoration/relock; Knox bit stayed tripped |
-| Samsung SM-S918B | 15 | Device owner and pairing launch confirmed; online confirmation not preserved |
-| Xiaomi 23124RA7EO | 13 / MIUI 14 | Owner confirmed online after extra USB permissions and setup-account removal |
-| Google Pixel 9 Pro Fold | 17 | Owner confirmed online on Core 1.27.1, after 1.26.0 silently discarded the same pairing |
+| Pixel 9 Pro Fold | 17 | Online after 1.26.0 silently discarded pairing |
+| Pixel 6 Pro | 14 | Online; phone had undergone a separate OS downgrade |
+| Samsung Galaxy A05 | 14 | Online |
+| Samsung Galaxy A04 | 14 | Online after separate stock restoration and relock; Knox remained tripped |
+| Samsung S23 Ultra | 15 | Device owner and pairing launch confirmed; online confirmation not preserved |
+| Xiaomi Redmi Note 13 | 13 | Online after extra USB permission and setup-account removal |
 
-The 2026-09-12 session closed a question the earlier notes had left open, by identifying the app version as the reason a correctly formed pairing could be accepted and then dropped. The [version notes](docs/downloads.md) record what that does and does not establish.
+The previous guarded helper completed onboarding on the Pixel 9 Pro Fold.
+The revised helper still needs a phone test; earlier sessions used the original
+helper. These results do not guarantee compatibility with every phone or
+future Core release. [Field record](docs/sources.md)
 
-The normal self-service walkthrough uses the phone's setup QR scanner. Our [USB technical notes](docs/usb-onboarding.md) describe an unofficial alternative that needs existing local tools and a reviewed pairing implementation; this guide does not silently fetch or run one.
+Stock restoration and Android downgrades are separate, model-specific work.
+They are not routine steps in this USB guide.
 
-[Version/provenance notes](docs/downloads.md) · [Technical helper review](docs/helper-review.md) · [Recovery boundaries](docs/recovery.md) · [Sources](docs/sources.md) · [Contribute](CONTRIBUTING.md)
+[Samsung notes](docs/samsung.md) ·
+[Xiaomi notes](docs/xiaomi.md) ·
+[Pixel notes](docs/pixel.md) ·
+[App verification](docs/downloads.md)
+
+## If you are still blocked
+
+Stop at the failed step. An installed app, a successful launch command, or a
+disconnected USB cable does not prove pairing.
+
+Use [troubleshooting](docs/troubleshooting.md), or
+[report the problem](https://github.com/bokiko/acurast-onboarding-fixes/issues/new/choose)
+with your phone model, Android and Core versions, the last successful step,
+and the error. Remove accounts, serial numbers, QR codes, and other private
+details from screenshots and logs.
+
+For the standard welcome-screen QR method, use
+[Acurast’s official onboarding instructions](https://docs.acurast.com/processors/become-compute-provider/).
 
 ---
 
-## License
+Community guide by [@bokiko](https://bokiko.io), not an official Acurast product.
 
-MIT — see [LICENSE](LICENSE).
-
----
+[Recovery boundaries](docs/recovery.md) ·
+[Sources](docs/sources.md) ·
+[Contribute](CONTRIBUTING.md) ·
+[MIT license](LICENSE)
 
 <img src="https://capsule-render.vercel.app/api?type=waving&amp;color=gradient&amp;height=100&amp;section=footer" alt="Decorative wave footer" width="100%" />
-
-<p align="center">
-  Made by <a href="https://bokiko.io">@bokiko</a>
-</p>

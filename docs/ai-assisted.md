@@ -1,70 +1,67 @@
-# Let Claude, Kimi, or Codex help
+# Let an AI assistant help with USB setup
 
-**You can give your assistant a link to this guide. There is no guide download, ZIP extraction, project installation, or code-editing step.**
+Read this guide in your browser. You do not need to download or clone it. Actual USB setup uses computer tools and installs Core on your phone.
 
-An assistant with access to your computer can handle much of the technical work. You still handle phone passwords, physical confirmations, SIM insertion if required, and wallet approvals. A browser-only chat can coach you, but cannot automatically reach a USB phone.
+**Validation status:** the revised helper has not yet completed a spare-phone test. The procedure stops before ownership until that test is recorded. See [helper review](helper-review.md).
 
-## 1. Open the assistant you already use
+## 1. Open the assistant you use
 
-Open your existing Claude, Kimi, or Codex app/session. For direct phone work, use a local session on the computer your phone is connected to, with command access you approve. You do not need all three assistants.
-
-If you do not already have a suitable assistant, use [the manual phone walkthrough](start-here.md). This guide does not ask you to install an AI app or computer software.
+Use a local assistant with command access on the computer connected to the phone. It starts by reading the same public guide pages you can read, then checks the computer and, when authorized, the phone. A browser-only chat can explain the [manual USB commands](usb-onboarding.md), but cannot run them on your computer.
 
 ## 2. Paste this into its chat box
 
-This is an ordinary message to the AI, **not a command for Terminal or PowerShell**:
+This is a message to your assistant, not a Terminal or PowerShell command. Read it before pasting.
 
 ```text
-Read this instruction file directly from GitHub:
+Read this public guide and its linked instructions directly from GitHub:
 https://github.com/bokiko/acurast-onboarding-fixes/blob/main/AI-ONBOARDING.md
-Then read the guide pages it references, also directly from GitHub.
-Prefer the phone's welcome-screen QR route. Only consider the advanced USB route
-if a reviewed local toolchain and pairing implementation are already installed on
-this computer; if they are not, tell me so and use the QR route instead of
-building or downloading tools. If you do use the USB route, follow
-docs/checklist.md in order and stop at any check it marks as a stop condition.
 
-Help me set up my own dedicated Android phone for Acurast Core, not Lite.
-I am not a coder. Explain the next action simply and do the computer work only where
-your existing tools and my permission allow it.
+Help me set up my own dedicated Android phone for Acurast Core using the
+community USB procedure. First establish your local access, the available
+tools, the intended phone, and the guide's current validation status.
+Explain missing tools, official sources, and proposed changes before setup.
+You may prepare the documented pinned toolchain within the setup I authorize.
+Do not clone the repository just to read it or invent an installer.
 
-Do not download or clone this repository, download helper files, install computer tools,
-or run installer scripts. First check whether you can access this computer and its
-connected phone using tools that are already available. If you cannot, say so.
+Follow the checklist in order. Stop at failed prerequisites and the release
+validation gate. A separate spare-phone test requires specific authorization.
+Do not reset, flash, change the bootloader, or replace an existing paired
+processor without a separate plan and my specific approval.
 
-Identify the correct phone, check its current state, and explain any proposed change
-before asking me to authorize phone setup. Never reset, flash firmware, unlock/relock
-the bootloader, or replace an existing paired processor without specific approval.
+Keep pairing data in a private local file read directly by the validator and
+helper. Never print it, open it into chat, or upload it. Never ask for wallet
+recovery words, private keys, passwords, or QR data in chat.
 
-Do not ask for passwords or wallet recovery words in chat. Keep pairing data private.
-Do not claim completion until the intended phone is confirmed online in my Acurast Hub.
+Explain my next action simply. I handle credentials, wallet approvals, and
+phone confirmations. Do not claim completion until the intended processor
+is confirmed online in my Acurast Hub.
 ```
 
-If the assistant cannot read GitHub, open [AI-ONBOARDING.md](../AI-ONBOARDING.md) in this browser, select its text and paste it into the conversation. No file download is needed. Do not paste a real QR or account credentials along with it.
+If the assistant cannot browse, paste the public instructions without private data. For a review branch, use that branch's instruction link; the example above intentionally targets the published main branch.
 
-## 3. What a helpful assistant should do
+## 3. Keep control of the setup
 
-It should first establish whether it has local access, which phone is connected, and what tools already exist. If it needs ADB or another program that is missing, it should explain that limitation and offer the manual QR route. It must not silently install software to make its plan work. A missing toolchain closes the USB route rather than becoming a task to solve: the right response is the QR route, not a build.
+The guide grants no access. The assistant's own permissions determine what it can read or change. These written boundaries are not a technical barrier against mistakes. Review the concrete plan before authorizing it; a reset or firmware change needs separate approval.
 
-Once you authorize a concrete phone setup plan, it can carry out the supported steps with available tools and inspect the results. If a setting needs your tap, it should give you the exact menu path. It should not make you run a long list of unexplained commands.
+You enter credentials on the phone or in the official wallet, approve physical prompts, and read Core's disclaimer yourself.
 
-A phone app installation is a separate action: Acurast must be installed on the phone to run. Reading this repo does not install it. The assistant must explain any required transfer or installation rather than promise that all setup is download-free.
+When ready, open your own [Acurast Hub](https://hub.acurast.com/), select the intended wallet, generate fresh pairing data, and save **Copy QR Data** to a private local file. Do not paste it in chat or a terminal command. Use a local editor without cloud sync or AI extensions; save plain UTF-8 text. The assistant receives the path, never the contents. Keep the file outside the repository, shared folders, and cloud backups. Protect it as described in the [USB procedure](usb-onboarding.md#private-pairing-file).
+
+The helper reads the file directly. Do not let the assistant print it, attach it, capture the clipboard, or take screenshots of the QR. Clear the clipboard after saving. Clipboard history, editor recovery files, and backups are additional private copies to manage.
+
+Core may disconnect USB before staged files can be removed. The assistant should report what was deleted and what could not be checked. Deletion is not a promise of secure erasure.
 
 ## 4. Your part
 
-1. Keep the intended phone connected, unlocked and on Wi-Fi.
-2. Accept its USB debugging prompt if using an authorized local USB method.
-3. Enter passwords on the phone or in the official wallet, never into chat.
-4. Open your own [Acurast Hub](https://hub.acurast.com/), connect the intended wallet, and generate fresh QR data only when needed.
-5. Read and accept the phone's disclaimer if you agree.
-6. Confirm that the new processor is online in your Hub.
-
-For the normal QR route, simply point the phone's setup scanner at the computer's QR. For an advanced USB route, let the assistant explain how an already-available reviewed tool handles private pairing data; do not upload it to an online QR decoder or public issue.
+1. Keep the intended phone connected, unlocked, powered, and on Wi-Fi.
+2. Authorize the trusted computer's USB debugging prompt when instructed.
+3. Handle account removal, credentials, and any required SIM on the phone.
+4. Generate the fresh Hub payload only when preflight is ready.
+5. Read and accept the disclaimer if you agree, before pairing expires.
+6. Confirm the intended processor online in your Hub.
 
 ## 5. If it gets stuck
 
-Say: **“Stop repeating the failed command. Read this guide's troubleshooting page and tell me the exact blocker, the last successful step, and one next action.”**
+Say: **“Stop repeating the failed command. Read the troubleshooting page and tell me the blocker, the last successful step, and one next action.”**
 
-When switching assistants, request a short handoff without secrets. The next assistant should recheck which phone is connected. Use only one assistant to change a phone at a time.
-
-**Reading this guide makes no changes to your computer or phone.** Actions taken by you or your assistant are separate, explicit steps.
+Use only one assistant to operate a phone. Keep handoffs free of secrets. Without a computer, see the [official route](official-route.md); it may still encounter the recorded Android 16/17 QR failure.

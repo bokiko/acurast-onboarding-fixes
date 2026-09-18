@@ -13,11 +13,11 @@ Link an issue if applicable.
 ## Validation
 
 - [ ] Checked affected links and formatting
-- [ ] Preserved browser-only instructions; no required guide download or installer commands
+- [ ] Preserved browser-only reading; separated authorized USB tool downloads from reading the guide
 - [ ] Clearly distinguished observed phone results from untested ideas
 - [ ] Reviewed staged content for private data
 
-Describe any device test actually performed, or state documentation-only. Do not imply a host check proves phone onboarding.
+Describe host checks and any device test separately, or state documentation-only. Do not imply a host check proves phone onboarding. Keep unvalidated helper changes behind the release gate.
 
 ## Screenshots
 
